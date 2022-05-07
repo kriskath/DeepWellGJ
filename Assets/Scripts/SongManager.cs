@@ -6,6 +6,7 @@ using UnityEngine;
     // This should be a Singleton.
     // Have the Level Manager determine current song to play. Level Manager tells Song Manager which level it is. Song Manager should determine which song to play
     // Have Music player after a small countdown when level loads.
+    // Have an Event raise when new song plays. 
 public class SongManager : MonoBehaviour
 {
 
@@ -17,17 +18,22 @@ public class SongManager : MonoBehaviour
     [SerializeField]
     [Min(0f)]
     private int notesShownInAdvance = 1;
+    public int GetNotesShownInAdvance() => notesShownInAdvance;
 
 
     private Song currentSong = null;
     private AudioSource audioSource = null;
     private int nextNoteIndex = 0;
 
+
     //the current position of the song (in seconds)
     private float songPosInSeconds;
 
+
     //the current position of the song (in beats)
     private float songPosInBeats;
+    public float GetSongPosInBeats() => songPosInBeats;
+
 
     //the duration of a beat
     private float secondsPerBeat;
@@ -78,7 +84,9 @@ public class SongManager : MonoBehaviour
         if (nextNoteIndex < currentSong.notes.Length && 
             currentSong.notes[nextNoteIndex].notePosInBeats < songPosInBeats + notesShownInAdvance)
         {
-            Instantiate(currentSong.notes[nextNoteIndex].notePrefab);
+
+            GameObject musicNote = Instantiate(currentSong.notes[nextNoteIndex].notePrefab);
+            musicNote.GetComponent<GameNote>();
 
             //initialize the fields of the music note
 
