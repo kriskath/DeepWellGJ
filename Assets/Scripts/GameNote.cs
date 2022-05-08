@@ -17,8 +17,8 @@ public class GameNote : MonoBehaviour
     private void Awake()
     {
         spriteRenderer = GetComponent<SpriteRenderer>();
-        spawnPos = GameObject.FindGameObjectWithTag("MusicDisplay").GetComponent<MusicDisplay>().StartPos.position;
-        removePos = GameObject.FindGameObjectWithTag("MusicDisplay").GetComponent<MusicDisplay>().EndPos.position;
+        spawnPos = MusicDisplay.Instance.StartPos.transform.position;
+        removePos = MusicDisplay.Instance.EndPos.transform.position;
     }
 
 
