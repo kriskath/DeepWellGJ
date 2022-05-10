@@ -12,8 +12,8 @@ public class SongManager : MonoBehaviour
 
     public static SongManager Instance { get; private set; }
 
-    [SerializeField]
-    private List<Song> songs = new List<Song>();
+
+
 
     [SerializeField]
     [Min(0f)]
@@ -21,19 +21,29 @@ public class SongManager : MonoBehaviour
     public int GetNotesShownInAdvance() => notesShownInAdvance;
 
 
+    [SerializeField]
+    private GameObject gameNotePrefab;
+    
+    [Space]
+
+    [Tooltip("The list of songs to play")]
+    [SerializeField]
+    private List<Song> songs = new List<Song>();
+
+
+
+
+
     private Song currentSong = null;
     private AudioSource audioSource = null;
-    private int nextNoteIndex = 0;
-
+    private int nextNoteIndex = 0; //the index of the next note to be played
 
     //the current position of the song (in seconds)
     private float songPosInSeconds;
 
-
     //the current position of the song (in beats)
     private float songPosInBeats;
     public float GetSongPosInBeats() => songPosInBeats;
-
 
     //the duration of a beat
     private float secondsPerBeat;
@@ -55,8 +65,8 @@ public class SongManager : MonoBehaviour
             Instance = this;
         }
 
+        // TEMPORARY -- Set current song based on level.
         currentSong = songs[0];
-        //start the song
         audioSource = GetComponent<AudioSource>();
     }
 
@@ -69,8 +79,14 @@ public class SongManager : MonoBehaviour
         dspTimeOfSong = (float)AudioSettings.dspTime;
 
         //start the song
-        audioSource.Play();
-
+        if (audioSource != null)
+        {
+            audioSource.Play();
+        }
+        else
+        {
+            Debug.LogError("No Audio Source Attached!");
+        }
     }
 
     void Update()
@@ -84,13 +100,18 @@ public class SongManager : MonoBehaviour
         if (nextNoteIndex < currentSong.notes.Length && 
             currentSong.notes[nextNoteIndex].notePosInBeats < songPosInBeats + notesShownInAdvance)
         {
-
-            GameObject musicNote = Instantiate(currentSong.notes[nextNoteIndex].notePrefab);
-            musicNote.GetComponent<GameNote>();
-
-            //initialize the fields of the music note
-
+            CreateNote();
             nextNoteIndex++;
         }
     }
+
+
+    private void CreateNote()
+    {
+        GameNote musicNote = Instantiate(gameNotePrefab).GetComponent<GameNote>(); //create note 
+
+        //TODO: fill note with data. (beatOfThisNote, valid input data)
+        musicNote.BeatOfThisNote(currentSong.notes[nextNoteIndex].notePosInBeats);
+    }
 }
+

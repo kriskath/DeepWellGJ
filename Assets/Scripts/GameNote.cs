@@ -6,17 +6,17 @@ using UnityEngine;
 public class GameNote : MonoBehaviour
 {
 
-    private SpriteRenderer spriteRenderer;
-
     Vector3 spawnPos;
     Vector3 removePos;
     int notesShownInAdvance;
-    float beatOfThisNote;
+
+
+    float beatOfThisNote; //we fill this data on instantiation from Song
+    public float BeatOfThisNote(float beat) => beatOfThisNote = beat;
 
 
     private void Awake()
     {
-        spriteRenderer = GetComponent<SpriteRenderer>();
         spawnPos = MusicDisplay.Instance.StartPos.transform.position;
         removePos = MusicDisplay.Instance.EndPos.transform.position;
     }
@@ -36,5 +36,12 @@ public class GameNote : MonoBehaviour
             removePos,
             (notesShownInAdvance - (beatOfThisNote - SongManager.Instance.GetSongPosInBeats())) / notesShownInAdvance
         );
+
+        if (transform.position == removePos)
+        {
+            //call code to build stress
+            //Invoke.?
+            Destroy(gameObject);
+        }
     }
 }
