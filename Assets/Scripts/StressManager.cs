@@ -8,7 +8,7 @@ public class StressManager : MonoBehaviour
 {
     int stressLevel = 0;
 
-    [Tooltip("Stress increment amoun.")]
+    [Tooltip("Stress increment amount.")]
     [SerializeField] int stressBuildupValue = 10;
 
     [Tooltip("Stress decrement amount.")]
