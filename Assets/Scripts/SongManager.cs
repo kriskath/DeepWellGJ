@@ -119,35 +119,43 @@ public class SongManager : MonoBehaviour
 
     private void CreateNote()
     {
-        GameNote musicNote = Instantiate(gameNotePrefab,MusicDisplay.Instance.StartPos.position,Quaternion.identity).GetComponent<GameNote>(); //create note 
+        //create note 
+        GameNote musicNote = Instantiate(gameNotePrefab, MusicDisplay.Instance.StartPos.position, Quaternion.identity).GetComponent<GameNote>(); 
 
         //TODO: fill note with data. (beatOfThisNote, valid input data)
         musicNote.BeatOfThisNote(currentSong.notes[nextNoteIndex].notePosInBeats);
     }
 
-    private void HitNote()  {
+    private void HitNote()  
+    {
         List<Collider2D> overlapNotes = new List<Collider2D>();
 
         MusicDisplay.Instance.MusicHitRadius.OverlapCollider(contactFilter, overlapNotes);
         
         // Iterate through overlapping notes
-        foreach (Collider2D gameNote in overlapNotes) {
-            // Check if correct key
-            if (Input.GetKeyDown((KeyCode) gameNote.gameObject.GetComponent<GameNote>().KeyOfThisNote)) {
+        foreach (Collider2D gameNote in overlapNotes) 
+        {
+            // Check if correct key hit
+            if (Input.GetKeyDown((KeyCode) gameNote.gameObject.GetComponent<GameNote>().KeyOfThisNote)) 
+            {
                 DestroyNote(gameNote.gameObject, true);
             }
         }
     }
 
-    public void DestroyNote(GameObject gameNote, bool isHit) {
+    public void DestroyNote(GameObject gameNote, bool isHit) 
+    {
         Destroy(gameNote.gameObject);
         // Invoke event, pass true for hit
         OnNoteDestroyed?.Invoke(isHit);
         // Event subscribers will play sound effects, trigger animation, etc
 
-        if (isHit) {
+        if (isHit) 
+        {
             Debug.Log("Hit success");
-        } else {
+        } 
+        else 
+        {
             Debug.Log("Hit missed");
         }
     }
