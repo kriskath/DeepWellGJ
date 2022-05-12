@@ -14,6 +14,10 @@ public class MusicDisplay : MonoBehaviour
     private Transform endPos;
     public Transform EndPos => endPos;
 
+    [SerializeField]
+    private Collider2D musicHitRadius;
+    public Collider2D MusicHitRadius => musicHitRadius;
+
     private void Awake() {
         // If there is an instance, and it's not me, delete myself.
         if (Instance != null && Instance != this)

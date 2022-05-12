@@ -1,17 +1,17 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using System;
 
 //Notes:
-    // This should be a Singleton.
     // Have the Level Manager determine current song to play. Level Manager tells Song Manager which level it is. Song Manager should determine which song to play
     // Have Music player after a small countdown when level loads.
     // Have an Event raise when new song plays. 
+    // Add a play function to add delay to start.
 public class SongManager : MonoBehaviour
 {
 
     public static SongManager Instance { get; private set; }
-
 
 
 
@@ -51,7 +51,10 @@ public class SongManager : MonoBehaviour
     //how much time (in seconds) has passed since the song started. (dsp = digital signal processing)
     private float dspTimeOfSong;
 
+    //event called when note is destroyed. true = note hit, false = note missed.
+    public static event Action<bool> OnNoteDestroyed;
 
+    private ContactFilter2D contactFilter;
 
     private void Awake()
     {
@@ -68,6 +71,10 @@ public class SongManager : MonoBehaviour
         // TEMPORARY -- Set current song based on level.
         currentSong = songs[0];
         audioSource = GetComponent<AudioSource>();
+        audioSource.clip = currentSong.song;
+
+        // Set contact filter properties
+        contactFilter.useTriggers = true;
     }
 
     void Start()
@@ -103,15 +110,46 @@ public class SongManager : MonoBehaviour
             CreateNote();
             nextNoteIndex++;
         }
+
+        if (Input.anyKeyDown) {
+            HitNote();
+        }
     }
 
 
     private void CreateNote()
     {
-        GameNote musicNote = Instantiate(gameNotePrefab).GetComponent<GameNote>(); //create note 
+        GameNote musicNote = Instantiate(gameNotePrefab,MusicDisplay.Instance.StartPos.position,Quaternion.identity).GetComponent<GameNote>(); //create note 
 
         //TODO: fill note with data. (beatOfThisNote, valid input data)
         musicNote.BeatOfThisNote(currentSong.notes[nextNoteIndex].notePosInBeats);
+    }
+
+    private void HitNote()  {
+        List<Collider2D> overlapNotes = new List<Collider2D>();
+
+        MusicDisplay.Instance.MusicHitRadius.OverlapCollider(contactFilter, overlapNotes);
+        
+        // Iterate through overlapping notes
+        foreach (Collider2D gameNote in overlapNotes) {
+            // Check if correct key
+            if (Input.GetKeyDown((KeyCode) gameNote.gameObject.GetComponent<GameNote>().KeyOfThisNote)) {
+                DestroyNote(gameNote.gameObject, true);
+            }
+        }
+    }
+
+    public void DestroyNote(GameObject gameNote, bool isHit) {
+        Destroy(gameNote.gameObject);
+        // Invoke event, pass true for hit
+        OnNoteDestroyed?.Invoke(isHit);
+        // Event subscribers will play sound effects, trigger animation, etc
+
+        if (isHit) {
+            Debug.Log("Hit success");
+        } else {
+            Debug.Log("Hit missed");
+        }
     }
 }
 

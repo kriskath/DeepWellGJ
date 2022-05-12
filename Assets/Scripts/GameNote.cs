@@ -13,6 +13,13 @@ public class GameNote : MonoBehaviour
     float beatOfThisNote; //we fill this data on instantiation from Song
     public float BeatOfThisNote(float beat) => beatOfThisNote = beat;
 
+    char keyOfThisNote; //we fill this data on instantiation from Song, use input system later
+    public char KeyOfThisNote 
+    {
+        get { return ' '; }
+        // get { return keyOfThisNote; }   // get method
+        set { keyOfThisNote = value; }  // set method
+    }
 
     private void Awake()
     {
@@ -38,9 +45,7 @@ public class GameNote : MonoBehaviour
 
         if (transform.position == removePos)
         {
-            //call code to build stress
-            //Invoke.?
-            Destroy(gameObject);
+            SongManager.Instance.DestroyNote(this.gameObject, false);
         }
     }
 }
