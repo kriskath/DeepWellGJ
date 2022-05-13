@@ -29,24 +29,8 @@ public class TextDisplay : MonoBehaviour
         
     }
 
-    public void UpdateText() {
-        // Find end of next word
-        indexOfWordDisplayed = linesToDisplay[lineToDisplay].IndexOf(' ', indexOfWordDisplayed +  1);
-        
-        if (indexOfWordDisplayed != -1)
-        {
-            // Update display text
-            displayText.text = linesToDisplay[lineToDisplay].Substring(0, indexOfWordDisplayed);
-        }
-        // Reached end of line, display full line
-        else {
-            displayText.text = linesToDisplay[lineToDisplay];
-
-            // Reset index
-            indexOfWordDisplayed = 0;
-
-            // Move to next line
-            lineToDisplay++;
-        }
+    public void UpdateText(string textToDisplay) {
+        // Update display text
+        displayText.text = textToDisplay;
     }
 }

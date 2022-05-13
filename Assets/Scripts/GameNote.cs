@@ -7,6 +7,7 @@ public class GameNote : MonoBehaviour
 
     Vector3 spawnPos;
     Vector3 removePos;
+    Vector3 hitPos;
     int notesShownInAdvance;
 
 
@@ -20,10 +21,18 @@ public class GameNote : MonoBehaviour
         set { keyOfThisNote = value; }  // set method
     }
 
+    bool isInput;
+    public bool IsInput 
+    { 
+        get { return isInput; }   // get method
+        set { isInput = value; }  // set method
+    }
+
     private void Awake()
     {
         spawnPos = MusicDisplay.Instance.StartPos.transform.position;
         removePos = MusicDisplay.Instance.EndPos.transform.position;
+        hitPos = MusicDisplay.Instance.MusicHitRadius.transform.position;
     }
 
 
@@ -41,6 +50,10 @@ public class GameNote : MonoBehaviour
             removePos,
             (notesShownInAdvance - (beatOfThisNote - SongManager.Instance.GetSongPosInBeats())) / notesShownInAdvance
         );
+
+        if (!isInput && transform.position == hitPos) {
+            InputSystem.Instance.DestroyNote(this.gameObject, true);
+        }
 
         if (transform.position == removePos)
         {

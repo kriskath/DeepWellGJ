@@ -7,12 +7,11 @@ using UnityEngine;
     // Have Music player after a small countdown when level loads.
     // Have an Event raise when new song plays. 
     // Add a play function to add delay to start.
+    // Allow inputs when calling
 public class SongManager : MonoBehaviour
 {
 
     public static SongManager Instance { get; private set; }
-
-
 
     [SerializeField]
     [Min(0f)]
@@ -97,14 +96,14 @@ public class SongManager : MonoBehaviour
 
         //if need to update text
         if (nextNoteIndex < currentSong.notes.Length && 
-            Mathf.Abs((float) currentSong.notes[nextNoteIndex].notePosInBeats - songPosInBeats) < 0.01f) 
+            currentSong.notes[nextNoteIndex].notePosInBeats < songPosInBeats) 
         {
-            Debug.Log("update text");
-            if (currentSong.notes[nextNoteIndex].displayText) 
+            print("update text");
+            if (!string.IsNullOrEmpty(currentSong.notes[nextNoteIndex].displayText)) 
             {
                 //TEMPORARY: replace with better method
-                GameObject.FindObjectOfType<TextDisplay>()?.UpdateText();
-                
+                GameObject.FindObjectOfType<TextDisplay>()?.UpdateText(currentSong.notes[nextNoteIndex].displayText);
+
                 nextNoteIndex++;
             }
         }
@@ -113,11 +112,12 @@ public class SongManager : MonoBehaviour
         if (nextNoteIndex < currentSong.notes.Length && 
             currentSong.notes[nextNoteIndex].notePosInBeats < songPosInBeats + notesShownInAdvance)
         {
-            if (!currentSong.notes[nextNoteIndex].displayText) 
+            if (currentSong.notes[nextNoteIndex].showNote) 
             {
-                CreateNote();
+                CreateNote(); 
                 nextNoteIndex++;
-            }
+            } 
+            
         }
     }
 
@@ -129,6 +129,7 @@ public class SongManager : MonoBehaviour
         //TODO: fill note with data. (beatOfThisNote, valid input data)
         musicNote.BeatOfThisNote(currentSong.notes[nextNoteIndex].notePosInBeats);
         musicNote.KeyOfThisNote = currentSong.notes[nextNoteIndex].keyOfThisNote;
+        musicNote.IsInput = currentSong.notes[nextNoteIndex].isInput;
     }
 }
 

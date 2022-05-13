@@ -23,8 +23,12 @@ public class Song : ScriptableObject
         //TODO : Key inputs stored here. Maybe array of valid key inputs? Index of valid key determines input mode for player?
         // 3 input settings. {1. Whole Keyboard, 2. 4-key input, 3. 1-key input}
         // NOTE: Space bar is excluded. Must be used for breathing.
-        public char keyOfThisNote;
+        public char keyOfThisNote = ' ';
 
-        public bool displayText;
+        [TextArea(0,5)]
+        public string displayText;
+
+        public bool showNote;
+        public bool isInput;
     }
 }
