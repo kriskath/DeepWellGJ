@@ -29,8 +29,18 @@ public class TextDisplay : MonoBehaviour
         
     }
 
-    public void UpdateText(string textToDisplay) {
+    public void UpdateText(string textToDisplay, bool isInput) {
         // Update display text
         displayText.text = textToDisplay;
+
+        // Format text
+        if (isInput) 
+        {
+            displayText.color = Color.yellow;
+        } 
+        else
+        {
+            displayText.color = Color.white;
+        }
     }
 }

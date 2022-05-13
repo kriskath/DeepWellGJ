@@ -53,13 +53,21 @@ public class StressManager : MonoBehaviour
     public void RemoveStress()
     {
         stressLevel = Mathf.Clamp(stressLevel - stressReleaseValue, 0, stressCap);
-
-        Debug.Log(stressLevel);
     }
 
     private void Update()
     {
         // Check for gameover
-        // Diminish over time
+        if (stressLevel == stressCap) 
+        {
+            Debug.Log("Gameover");
+        }
+        // Check for threshold, update so it's only called the first time
+        else if (stressLevel >= 0.5f * stressCap) {
+            // Update animations?
+            Debug.Log("Getting pretty stressed!");
+        }
+
+        // Diminish over time?
     }
 }

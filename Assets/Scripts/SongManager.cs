@@ -45,9 +45,12 @@ public class SongManager : MonoBehaviour
 
     //the duration of a beat
     private float secondsPerBeat;
+    public float SecondsPerBeat => secondsPerBeat;
 
     //how much time (in seconds) has passed since the song started. (dsp = digital signal processing)
     private float dspTimeOfSong;
+
+    private Queue<Song.NoteData> textToDisplay = new Queue<Song.NoteData>();
 
     private void Awake()
     {
@@ -94,30 +97,30 @@ public class SongManager : MonoBehaviour
         //calculate the position in beats
         songPosInBeats = songPosInSeconds / secondsPerBeat;
 
-        //if need to update text
-        if (nextNoteIndex < currentSong.notes.Length && 
-            currentSong.notes[nextNoteIndex].notePosInBeats < songPosInBeats) 
-        {
-            print("update text");
-            if (!string.IsNullOrEmpty(currentSong.notes[nextNoteIndex].displayText)) 
-            {
-                //TEMPORARY: replace with better method
-                GameObject.FindObjectOfType<TextDisplay>()?.UpdateText(currentSong.notes[nextNoteIndex].displayText);
-
-                nextNoteIndex++;
-            }
-        }
-
         //if need to spawn note
         if (nextNoteIndex < currentSong.notes.Length && 
             currentSong.notes[nextNoteIndex].notePosInBeats < songPosInBeats + notesShownInAdvance)
         {
+            //add note to queue if need to spawn text
+            if (!string.IsNullOrEmpty(currentSong.notes[nextNoteIndex].displayText)) {
+                textToDisplay.Enqueue(currentSong.notes[nextNoteIndex]);
+            }
+
+            //show note if need to spawn note
             if (currentSong.notes[nextNoteIndex].showNote) 
             {
                 CreateNote(); 
-                nextNoteIndex++;
             } 
-            
+
+            nextNoteIndex++;
+        }
+
+        //if need to update text
+        if (textToDisplay.Count != 0 && 
+            textToDisplay.Peek().notePosInBeats <= songPosInBeats) 
+        {
+            //TEMPORARY: replace with better method
+            GameObject.FindObjectOfType<TextDisplay>()?.UpdateText(textToDisplay.Peek().displayText, textToDisplay.Dequeue().isInput);
         }
     }
 
@@ -126,10 +129,16 @@ public class SongManager : MonoBehaviour
         //create note 
         GameNote musicNote = Instantiate(gameNotePrefab, MusicDisplay.Instance.StartPos.position, Quaternion.identity).GetComponent<GameNote>(); 
 
-        //TODO: fill note with data. (beatOfThisNote, valid input data)
+        //fill note with data. (beatOfThisNote, valid input data)
         musicNote.BeatOfThisNote(currentSong.notes[nextNoteIndex].notePosInBeats);
         musicNote.KeyOfThisNote = currentSong.notes[nextNoteIndex].keyOfThisNote;
         musicNote.IsInput = currentSong.notes[nextNoteIndex].isInput;
+
+        //format if not input
+        if (!musicNote.IsInput)
+        {
+            musicNote.gameObject.GetComponent<SpriteRenderer>().color = new Color(1, 1, 1, 0.5f);
+        }
     }
 }
 

@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+// TODO: Set sprite so we know what the correct input is
 public class GameNote : MonoBehaviour
 {
 
@@ -48,13 +49,16 @@ public class GameNote : MonoBehaviour
         transform.position = Vector2.Lerp(
             spawnPos,
             removePos,
-            (notesShownInAdvance - (beatOfThisNote - SongManager.Instance.GetSongPosInBeats())) / notesShownInAdvance
+            ((notesShownInAdvance - (beatOfThisNote - SongManager.Instance.GetSongPosInBeats())) / notesShownInAdvance) *
+                (hitPos.x - spawnPos.x)/(removePos.x - spawnPos.x) // scale so reach hit box on beat
         );
 
-        if (!isInput && transform.position == hitPos) {
+        // Destroy note at hit box if not input
+        if (!isInput && transform.position.x <= hitPos.x) {
             InputSystem.Instance.DestroyNote(this.gameObject, true);
         }
 
+        // Destroy note at end point
         if (transform.position == removePos)
         {
             InputSystem.Instance.DestroyNote(this.gameObject, false);

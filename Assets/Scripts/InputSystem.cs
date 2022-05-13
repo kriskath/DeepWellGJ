@@ -14,8 +14,6 @@ public class InputSystem : MonoBehaviour
     //event called when note is destroyed. true = note hit, false = note missed.
     public static event Action<bool> OnNoteDestroyed;
 
-    private InputAction breatheAction;
-
     private void Awake()
     {
         // If there is an instance, and it's not me, delete myself.
@@ -34,17 +32,17 @@ public class InputSystem : MonoBehaviour
         // Map HitNote to any key press
         Keyboard.current.onTextInput += HitNote;
 
-        // Map Breathe to space bar
-        breatheAction = new InputAction("breathe", 
-            type: InputActionType.Button,
-            binding: "<Keyboard>/space");
-        breatheAction.Enable();
-
-        breatheAction.performed += OnBreathe;
+        // Map OnBreathe to input
+        GetComponent<PlayerInput>().onActionTriggered += OnBreathe;
     }
 
     private void HitNote(char keyPressed)  
     {
+        // Ignore spacebar (breath)
+        if (keyPressed == ' ') {
+            return;
+        }
+
         List<Collider2D> overlapNotes = new List<Collider2D>();
 
         MusicDisplay.Instance.MusicHitRadius.OverlapCollider(contactFilter, overlapNotes);
@@ -89,7 +87,23 @@ public class InputSystem : MonoBehaviour
         }
     }
 
-    private void OnBreathe(InputAction.CallbackContext context) {
-        // Debug.Log("Breathed for " + context.duration + " seconds");
+    public void OnBreathe(InputAction.CallbackContext context) {
+        // When done breathing
+        if (context.action.name == "Breathe" && context.performed) {
+            // Might want to have a OnSongChanged event so we only need to get secondsperbeat once
+            float breatheDuration = (float) context.duration / SongManager.Instance.SecondsPerBeat;
+            Debug.Log("Breathed for " + breatheDuration + " beats");
+
+            // If breath too short
+            if (breatheDuration < 0.25f) {
+                StressManager.Instance.AddStress(false);
+                Debug.Log("Failed breath");
+            }
+            // If breathe long enough
+            else if (breatheDuration > 1f) {
+                StressManager.Instance.RemoveStress();
+                Debug.Log("Successful breath");
+            }
+        }
     }
 }
