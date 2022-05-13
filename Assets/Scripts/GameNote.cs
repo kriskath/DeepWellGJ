@@ -16,8 +16,7 @@ public class GameNote : MonoBehaviour
     char keyOfThisNote; //we fill this data on instantiation from Song, use input system later
     public char KeyOfThisNote 
     {
-        get { return ' '; }
-        // get { return keyOfThisNote; }   // get method
+        get { return keyOfThisNote; }   // get method
         set { keyOfThisNote = value; }  // set method
     }
 
@@ -45,7 +44,7 @@ public class GameNote : MonoBehaviour
 
         if (transform.position == removePos)
         {
-            SongManager.Instance.DestroyNote(this.gameObject, false);
+            InputSystem.Instance.DestroyNote(this.gameObject, false);
         }
     }
 }

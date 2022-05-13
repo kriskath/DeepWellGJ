@@ -6,6 +6,8 @@ using UnityEngine;
 // Add thresholds to change character animation
 public class StressManager : MonoBehaviour
 {
+    public static StressManager Instance { get; private set; }
+
     int stressLevel = 0;
 
     [Tooltip("Stress increment amount.")]
@@ -17,14 +19,27 @@ public class StressManager : MonoBehaviour
     [Tooltip("Stress cap amount.")]
     [SerializeField] int stressCap = 100;
 
+    private void Awake()
+    {
+        // If there is an instance, and it's not me, delete myself.
+        if (Instance != null && Instance != this)
+        {
+            Destroy(this);
+        }
+        else
+        {
+            Instance = this;
+        }
+    }
+
     private void OnEnable()
     {
-        SongManager.OnNoteDestroyed += AddStress;
+        InputSystem.OnNoteDestroyed += AddStress;
     }
 
     private void OnDisable()
     {
-        SongManager.OnNoteDestroyed -= AddStress;
+        InputSystem.OnNoteDestroyed -= AddStress;
     }
 
     public void AddStress(bool isHit) 
@@ -32,8 +47,6 @@ public class StressManager : MonoBehaviour
         if (!isHit)
         {
             stressLevel = Mathf.Clamp(stressLevel + stressBuildupValue, 0, stressCap);
-
-            Debug.Log(stressLevel);
         }
     }
 

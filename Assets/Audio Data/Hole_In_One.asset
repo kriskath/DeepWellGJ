@@ -16,8 +16,20 @@ MonoBehaviour:
   bpm: 30
   notes:
   - notePosInBeats: 1
-  - notePosInBeats: 2
+    keyOfThisNote: 97
+    displayText: 0
+  - notePosInBeats: 1.25
+    keyOfThisNote: 97
+    displayText: 1
+  - notePosInBeats: 1.5
+    keyOfThisNote: 97
+    displayText: 1
+  - notePosInBeats: 2.5
+    keyOfThisNote: 97
+    displayText: 1
+  - notePosInBeats: 2.75
+    keyOfThisNote: 97
+    displayText: 1
   - notePosInBeats: 3
-  - notePosInBeats: 4
-  - notePosInBeats: 5
-  - notePosInBeats: 6
+    keyOfThisNote: 97
+    displayText: 1
