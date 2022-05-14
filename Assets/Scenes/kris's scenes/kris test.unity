@@ -1205,11 +1205,38 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   notesShownInAdvance: 1
-  numBeatsTillClearingTextBox: 0.4
+  beatsTillClearingTextBox: 0.25
   gameNotePrefab: {fileID: 4932242004381343564, guid: 9a2ba0f797ce65145a4a6edc3e717bb3, type: 3}
   textDisplay: {fileID: 1729362284}
   songs:
   - {fileID: 11400000, guid: 8481ccb7133a356419c91d73966ab147, type: 2}
+  alphabet:
+  - {fileID: 1601749358, guid: 98dcbc0a0489adc43bd57742dca7bbe0, type: 3}
+  - {fileID: -106046690, guid: 98dcbc0a0489adc43bd57742dca7bbe0, type: 3}
+  - {fileID: 1628155805, guid: 98dcbc0a0489adc43bd57742dca7bbe0, type: 3}
+  - {fileID: -1513704690, guid: 98dcbc0a0489adc43bd57742dca7bbe0, type: 3}
+  - {fileID: -802658899, guid: 98dcbc0a0489adc43bd57742dca7bbe0, type: 3}
+  - {fileID: 1726914433, guid: 98dcbc0a0489adc43bd57742dca7bbe0, type: 3}
+  - {fileID: -1580242372, guid: 98dcbc0a0489adc43bd57742dca7bbe0, type: 3}
+  - {fileID: -1333572578, guid: 98dcbc0a0489adc43bd57742dca7bbe0, type: 3}
+  - {fileID: -526562149, guid: 98dcbc0a0489adc43bd57742dca7bbe0, type: 3}
+  - {fileID: 1472473056, guid: 98dcbc0a0489adc43bd57742dca7bbe0, type: 3}
+  - {fileID: -247925848, guid: 98dcbc0a0489adc43bd57742dca7bbe0, type: 3}
+  - {fileID: 1842306506, guid: 98dcbc0a0489adc43bd57742dca7bbe0, type: 3}
+  - {fileID: -1364003192, guid: 98dcbc0a0489adc43bd57742dca7bbe0, type: 3}
+  - {fileID: 524142592, guid: 98dcbc0a0489adc43bd57742dca7bbe0, type: 3}
+  - {fileID: -743889499, guid: 98dcbc0a0489adc43bd57742dca7bbe0, type: 3}
+  - {fileID: 570154049, guid: 98dcbc0a0489adc43bd57742dca7bbe0, type: 3}
+  - {fileID: 24339208, guid: 98dcbc0a0489adc43bd57742dca7bbe0, type: 3}
+  - {fileID: -703304822, guid: 98dcbc0a0489adc43bd57742dca7bbe0, type: 3}
+  - {fileID: -267622195, guid: 98dcbc0a0489adc43bd57742dca7bbe0, type: 3}
+  - {fileID: 1831517728, guid: 98dcbc0a0489adc43bd57742dca7bbe0, type: 3}
+  - {fileID: -51450308, guid: 98dcbc0a0489adc43bd57742dca7bbe0, type: 3}
+  - {fileID: 592499190, guid: 98dcbc0a0489adc43bd57742dca7bbe0, type: 3}
+  - {fileID: 61495147, guid: 98dcbc0a0489adc43bd57742dca7bbe0, type: 3}
+  - {fileID: 1859624647, guid: 98dcbc0a0489adc43bd57742dca7bbe0, type: 3}
+  - {fileID: -1030988494, guid: 98dcbc0a0489adc43bd57742dca7bbe0, type: 3}
+  - {fileID: 1330374729, guid: 98dcbc0a0489adc43bd57742dca7bbe0, type: 3}
 --- !u!82 &2044304682
 AudioSource:
   m_ObjectHideFlags: 0

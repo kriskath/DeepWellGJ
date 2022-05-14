@@ -34,6 +34,11 @@ public class SongManager : MonoBehaviour
     [SerializeField]
     private List<Song> songs = new List<Song>();
 
+    [Space]
+
+    [Tooltip("Alphabet to display on game notes.")]
+    [SerializeField]
+    private List<Sprite> alphabet = new List<Sprite>();
 
 
     private Song currentSong = null;
@@ -173,6 +178,9 @@ public class SongManager : MonoBehaviour
         musicNote.BeatOfThisNote(currentSong.notes[nextNoteIndex].notePosInBeats);
         musicNote.KeyOfThisNote = currentSong.notes[nextNoteIndex].keyOfThisNote;
         musicNote.IsInput = currentSong.notes[nextNoteIndex].isInput;
+
+        if (musicNote.IsInput)
+            musicNote.SetSprite(alphabet[musicNote.KeyOfThisNote - 'a']);
 
         //format if not input
         if (!musicNote.IsInput)

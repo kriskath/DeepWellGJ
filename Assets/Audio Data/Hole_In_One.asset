@@ -62,21 +62,21 @@ MonoBehaviour:
     isInput: 0
   - notePosInBeats: 6
     keyOfThisNote: 110
-    displayText: N
+    displayText: 
     showNote: 1
     isInput: 1
   - notePosInBeats: 6.25
     keyOfThisNote: 97
-    displayText: NA
+    displayText: 
     showNote: 1
     isInput: 1
   - notePosInBeats: 6.75
     keyOfThisNote: 109
-    displayText: NAM
+    displayText: 
     showNote: 1
     isInput: 1
   - notePosInBeats: 7
     keyOfThisNote: 101
-    displayText: NAME
+    displayText: 
     showNote: 1
     isInput: 1

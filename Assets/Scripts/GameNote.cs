@@ -6,6 +6,8 @@ using UnityEngine;
 public class GameNote : MonoBehaviour
 {
 
+    [SerializeField] SpriteRenderer spriteRenderer;
+
     Vector3 spawnPos;
     Vector3 removePos;
     Vector3 hitPos;
@@ -63,5 +65,10 @@ public class GameNote : MonoBehaviour
         {
             InputSystem.Instance.DestroyNote(this.gameObject, false);
         }
+    }
+
+    public void SetSprite(Sprite sprite)
+    {
+        spriteRenderer.sprite = sprite;
     }
 }
