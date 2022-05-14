@@ -109,27 +109,38 @@ public class SongManager : MonoBehaviour
         //calculate the position in beats
         songPosInBeats = songPosInSeconds / secondsPerBeat;
 
+        CheckToSpawnNote();
+
+        UpdateText();
+    }
+
+    private void CheckToSpawnNote()
+    {
         //if need to spawn note
-        if (nextNoteIndex < currentSong.notes.Length && 
+        if (nextNoteIndex < currentSong.notes.Length &&
             currentSong.notes[nextNoteIndex].notePosInBeats < songPosInBeats + notesShownInAdvance)
         {
             //add note to queue if need to spawn text
-            if (!string.IsNullOrEmpty(currentSong.notes[nextNoteIndex].displayText)) {
+            if (!string.IsNullOrEmpty(currentSong.notes[nextNoteIndex].displayText))
+            {
                 textToDisplay.Enqueue(currentSong.notes[nextNoteIndex]);
             }
 
             //show note if need to spawn note
-            if (currentSong.notes[nextNoteIndex].showNote) 
+            if (currentSong.notes[nextNoteIndex].showNote)
             {
-                CreateNote(); 
-            } 
+                CreateNote();
+            }
 
             nextNoteIndex++;
         }
+    }
 
+    private void UpdateText()
+    {
         //if need to update text
-        if (textToDisplay.Count != 0 && 
-            textToDisplay.Peek().notePosInBeats <= songPosInBeats) 
+        if (textToDisplay.Count != 0 &&
+            textToDisplay.Peek().notePosInBeats <= songPosInBeats)
         {
             bool oldCurIsInput = textToDisplay.Peek().isInput;
 
