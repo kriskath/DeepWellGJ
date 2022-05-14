@@ -8,39 +8,38 @@ public class TextDisplay : MonoBehaviour
     [SerializeField]
     TMP_Text displayText;
 
-    // Temp: test string
-    int indexOfWordDisplayed;
-    int lineToDisplay;
-    string[] linesToDisplay = {
-        "Hey, pal!",
-        "Here, in line!"
-    };
+    bool canAppend = false;
 
-    // Start is called before the first frame update
+
     void Start()
     {
         // Initialize text as empty
         displayText.text = "";
     }
 
-    // Update is called once per frame
-    void Update()
+    public void ClearTextBox()
     {
-        
+        displayText.text = "";
+        displayText.color = Color.yellow;
+        canAppend = true;
     }
 
-    public void UpdateText(string textToDisplay, bool isInput) {
-        // Update display text
-        displayText.text = textToDisplay;
 
-        // Format text
-        if (isInput) 
+    public void UpdateText(string textToDisplay, bool isInput) {
+        if (!isInput)
         {
-            displayText.color = Color.yellow;
-        } 
-        else
-        {
+            // Update display text
+            displayText.text = textToDisplay;
             displayText.color = Color.white;
+            canAppend = false;
+        }
+    }
+
+    public void AppendToText(string textToAppend)
+    {
+        if (canAppend)
+        {
+            displayText.text += textToAppend;
         }
     }
 }

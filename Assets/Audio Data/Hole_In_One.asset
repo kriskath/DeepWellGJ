@@ -32,7 +32,7 @@ MonoBehaviour:
     isInput: 1
   - notePosInBeats: 2.5
     keyOfThisNote: 107
-    displayText: OK
+    displayText: K
     showNote: 1
     isInput: 1
   - notePosInBeats: 3

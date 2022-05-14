@@ -2,22 +2,32 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-// Add breathing mechanic
-// Add thresholds to change character animation
+// change character animation
 public class StressManager : MonoBehaviour
 {
     public static StressManager Instance { get; private set; }
 
-    int stressLevel = 0;
 
     [Tooltip("Stress increment amount.")]
     [SerializeField] int stressBuildupValue = 10;
 
     [Tooltip("Stress decrement amount.")]
-    [SerializeField] int stressReleaseValue = 10;
+    [SerializeField] int stressReleaseValue = 25;
 
     [Tooltip("Stress cap amount.")]
     [SerializeField] int stressCap = 100;
+
+    [Tooltip("The minimum time in beats player must breathe for to destress.")]
+    [Min(0f)]
+    [SerializeField] float minBreathTimeInBeats = 0.25f;
+    public float MinBreathTimeInBeats => minBreathTimeInBeats;
+
+    [Tooltip("The maximum time in beats player must breathe for to destress.")]
+    [Min(0f)]
+    [SerializeField] float maxBreathTimeInBeats = 1.25f;
+    public float MaxBreathTimeInBeats => maxBreathTimeInBeats;
+
+    private int stressLevel = 0;
 
     private void Awake()
     {
@@ -60,12 +70,12 @@ public class StressManager : MonoBehaviour
         // Check for gameover
         if (stressLevel == stressCap) 
         {
-            Debug.Log("Gameover");
+            //Debug.Log("Gameover");
         }
         // Check for threshold, update so it's only called the first time
         else if (stressLevel >= 0.5f * stressCap) {
             // Update animations?
-            Debug.Log("Getting pretty stressed!");
+            //Debug.Log("Getting pretty stressed!");
         }
 
         // Diminish over time?

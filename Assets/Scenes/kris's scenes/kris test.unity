@@ -610,6 +610,8 @@ MonoBehaviour:
   stressBuildupValue: 10
   stressReleaseValue: 10
   stressCap: 100
+  minBreathTimeInBeats: 0.25
+  maxBreathTimeInBeats: 1.25
 --- !u!4 &1236575028
 Transform:
   m_ObjectHideFlags: 0
@@ -655,6 +657,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ce57bde37d72d4d89abc960894328c6a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  textDisplay: {fileID: 1729362284}
 --- !u!4 &1392350622
 Transform:
   m_ObjectHideFlags: 0
@@ -1202,7 +1205,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   notesShownInAdvance: 1
+  numBeatsTillClearingTextBox: 0.4
   gameNotePrefab: {fileID: 4932242004381343564, guid: 9a2ba0f797ce65145a4a6edc3e717bb3, type: 3}
+  textDisplay: {fileID: 1729362284}
   songs:
   - {fileID: 11400000, guid: 8481ccb7133a356419c91d73966ab147, type: 2}
 --- !u!82 &2044304682

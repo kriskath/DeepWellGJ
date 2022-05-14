@@ -2,12 +2,11 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-//Notes:
-    // Have the Level Manager determine current song to play. Level Manager tells Song Manager which level it is. Song Manager should determine which song to play
-    // Have Music player after a small countdown when level loads.
-    // Have an Event raise when new song plays. 
-    // Add a play function to add delay to start.
-    // Allow inputs when calling
+//Notes / TODO:
+// Have the Level Manager determine current song to play. Level Manager tells Song Manager which level it is. Song Manager should determine which song to play
+// Have Music player after a small countdown when level loads. Add a play function to add delay to start.
+// Have an Event raise when new song plays. 
+// Allow inputs when in calling state of song (pain)
 public class SongManager : MonoBehaviour
 {
 
@@ -18,9 +17,16 @@ public class SongManager : MonoBehaviour
     private int notesShownInAdvance = 1;
     public int GetNotesShownInAdvance() => notesShownInAdvance;
 
+    [Tooltip("Time in beats till text box is cleared. After responder sequence and before player input sequence.")]
+    [SerializeField]
+    float beatsTillClearingTextBox = 0.25f;
 
     [SerializeField]
     private GameObject gameNotePrefab;
+
+    [Tooltip("Text Display system for the song script.")]
+    [SerializeField]
+    private TextDisplay textDisplay;
     
     [Space]
 
@@ -30,11 +36,9 @@ public class SongManager : MonoBehaviour
 
 
 
-
-
     private Song currentSong = null;
     private AudioSource audioSource = null;
-    private int nextNoteIndex = 0; //the index of the next note to be played
+    private int nextNoteIndex = 0; //the index of the next note to be displayed
 
     //the current position of the song (in seconds)
     private float songPosInSeconds;
@@ -50,7 +54,10 @@ public class SongManager : MonoBehaviour
     //how much time (in seconds) has passed since the song started. (dsp = digital signal processing)
     private float dspTimeOfSong;
 
+
     private Queue<Song.NoteData> textToDisplay = new Queue<Song.NoteData>();
+
+
 
     private void Awake()
     {
@@ -62,6 +69,11 @@ public class SongManager : MonoBehaviour
         else
         {
             Instance = this;
+        }
+
+        if (!textDisplay)
+        {
+            textDisplay = FindObjectOfType<TextDisplay>();
         }
 
         // TEMPORARY -- Set current song based on level.
@@ -119,9 +131,26 @@ public class SongManager : MonoBehaviour
         if (textToDisplay.Count != 0 && 
             textToDisplay.Peek().notePosInBeats <= songPosInBeats) 
         {
-            //TEMPORARY: replace with better method
-            GameObject.FindObjectOfType<TextDisplay>()?.UpdateText(textToDisplay.Peek().displayText, textToDisplay.Dequeue().isInput);
+            bool oldCurIsInput = textToDisplay.Peek().isInput;
+
+            textDisplay.UpdateText(textToDisplay.Peek().displayText, textToDisplay.Dequeue().isInput);
+
+            bool newCurrentIsInput = false;
+            if (textToDisplay.Count != 0)
+                newCurrentIsInput = textToDisplay.Peek().isInput;
+
+            //transitioning. So allow for appending to text box
+            if (!oldCurIsInput && newCurrentIsInput)
+            {
+                StartCoroutine(CallClearTextBox());
+            }
         }
+    }
+
+    IEnumerator CallClearTextBox()
+    {
+        yield return new WaitForSeconds(secondsPerBeat * beatsTillClearingTextBox);
+        textDisplay.ClearTextBox();
     }
 
     private void CreateNote()
@@ -137,6 +166,7 @@ public class SongManager : MonoBehaviour
         //format if not input
         if (!musicNote.IsInput)
         {
+            //transparency effect
             musicNote.gameObject.GetComponent<SpriteRenderer>().color = new Color(1, 1, 1, 0.5f);
         }
     }

@@ -4,8 +4,13 @@ using UnityEngine;
 using System;
 using UnityEngine.InputSystem;
 
+//TODO:
+    // Read in user inputs and display them in text box
 public class InputSystem : MonoBehaviour
 {
+    [Tooltip("Text Display system for the song script.")]
+    [SerializeField] TextDisplay textDisplay;
+
     public static InputSystem Instance { get; private set; }
 
     //used to detect note hit overlap
@@ -24,6 +29,11 @@ public class InputSystem : MonoBehaviour
         else
         {
             Instance = this;
+        }
+
+        if (!textDisplay)
+        {
+            textDisplay = FindObjectOfType<TextDisplay>();
         }
 
         // Set contact filter properties
@@ -58,6 +68,8 @@ public class InputSystem : MonoBehaviour
         // Iterate through overlapping notes
         foreach (Collider2D gameNote in overlapNotes) 
         {
+            textDisplay.AppendToText(keyPressed + "");
+
             // Check if correct key hit
             if (keyPressed == gameNote.gameObject.GetComponent<GameNote>().KeyOfThisNote)
             {
@@ -91,16 +103,17 @@ public class InputSystem : MonoBehaviour
         // When done breathing
         if (context.action.name == "Breathe" && context.performed) {
             // Might want to have a OnSongChanged event so we only need to get secondsperbeat once
-            float breatheDuration = (float) context.duration / SongManager.Instance.SecondsPerBeat;
-            Debug.Log("Breathed for " + breatheDuration + " beats");
+            float breatheDurationInBeats = (float) context.duration / SongManager.Instance.SecondsPerBeat;
+            Debug.Log("Breathed for " + breatheDurationInBeats + " beats");
 
-            // If breath too short
-            if (breatheDuration < 0.25f) {
+            // If breath too short or long
+            if (breatheDurationInBeats < StressManager.Instance.MinBreathTimeInBeats || 
+                breatheDurationInBeats > StressManager.Instance.MaxBreathTimeInBeats) {
                 StressManager.Instance.AddStress(false);
                 Debug.Log("Failed breath");
             }
             // If breathe long enough
-            else if (breatheDuration > 1f) {
+            else { 
                 StressManager.Instance.RemoveStress();
                 Debug.Log("Successful breath");
             }
