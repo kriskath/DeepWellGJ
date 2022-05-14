@@ -125,11 +125,8 @@ public class SongManager : MonoBehaviour
         if (nextNoteIndex < currentSong.notes.Length &&
             currentSong.notes[nextNoteIndex].notePosInBeats < songPosInBeats + notesShownInAdvance)
         {
-            //add note to queue if need to spawn text
-            if (!string.IsNullOrEmpty(currentSong.notes[nextNoteIndex].displayText))
-            {
-                textToDisplay.Enqueue(currentSong.notes[nextNoteIndex]);
-            }
+            //add note to queue
+            textToDisplay.Enqueue(currentSong.notes[nextNoteIndex]);
 
             //show note if need to spawn note
             if (currentSong.notes[nextNoteIndex].showNote)
@@ -186,7 +183,7 @@ public class SongManager : MonoBehaviour
         if (!musicNote.IsInput)
         {
             //transparency effect
-            musicNote.gameObject.GetComponent<SpriteRenderer>().color = new Color(1, 1, 1, 0.5f);
+            musicNote.SetSpriteColor(new Color(1, 1, 1, 0.5f));
         }
     }
 }

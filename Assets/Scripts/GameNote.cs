@@ -71,4 +71,9 @@ public class GameNote : MonoBehaviour
     {
         spriteRenderer.sprite = sprite;
     }
+
+    public void SetSpriteColor(Color color)
+    {
+        spriteRenderer.color = color;
+    }
 }
