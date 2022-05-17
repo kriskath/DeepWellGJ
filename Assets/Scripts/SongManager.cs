@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 //Notes / TODO:
 // Have the Level Manager determine current song to play. Level Manager tells Song Manager which level it is. Song Manager should determine which song to play
@@ -85,38 +86,32 @@ public class SongManager : MonoBehaviour
         currentSong = songs[0];
         audioSource = GetComponent<AudioSource>();
         audioSource.clip = currentSong.song;
+
+        // Bind pausing music to OnGamePaused
+        InputSystem.OnGamePaused += PauseMusic;
     }
 
     void Start()
     {
-        //calculate how many seconds is one beat
-        secondsPerBeat = 60f / currentSong.bpm;
-
-        //record the time when the song starts
-        dspTimeOfSong = (float)AudioSettings.dspTime;
-
-        //start the song
-        if (audioSource != null)
-        {
-            audioSource.Play();
-        }
-        else
-        {
-            Debug.LogError("No Audio Source Attached!");
-        }
+        IEnumerator startCoroutine = StartMusicWithDelay(3);
+        // Start music
+        StartCoroutine(startCoroutine);
     }
 
     void Update()
     {
-        //calculate the position in seconds
-        songPosInSeconds = (float)(AudioSettings.dspTime - dspTimeOfSong);
+        if (audioSource.isPlaying)
+        {
+            //calculate the position in seconds
+            songPosInSeconds = (float)(AudioSettings.dspTime - dspTimeOfSong);
 
-        //calculate the position in beats
-        songPosInBeats = songPosInSeconds / secondsPerBeat;
+            //calculate the position in beats
+            songPosInBeats = songPosInSeconds / secondsPerBeat;
 
-        CheckToSpawnNote();
+            CheckToSpawnNote();
 
-        UpdateText();
+            UpdateText();
+        }
     }
 
     private void CheckToSpawnNote()
@@ -184,6 +179,59 @@ public class SongManager : MonoBehaviour
         {
             //transparency effect
             musicNote.SetSpriteColor(new Color(1, 1, 1, 0.5f));
+        }
+    }
+
+    private IEnumerator StartMusicWithDelay(int numSeconds)
+    {
+        // Disable input while counting down
+        FindObjectOfType<PlayerInput>().actions.Disable();
+
+        for (int i = 0; i < numSeconds; i++)
+        {
+            print(i+1);
+            yield return new WaitForSeconds(1f);
+        }
+
+        print("Go!");
+
+        // Enable input
+        FindObjectOfType<PlayerInput>().actions.Enable();
+        // Start music
+        PlayMusic();
+    }
+
+    private void PlayMusic()
+    {
+        //calculate how many seconds is one beat
+        secondsPerBeat = 60f / currentSong.bpm;
+
+        //record the time when the song starts offset by song timestamp
+        dspTimeOfSong = (float)AudioSettings.dspTime - audioSource.time;
+
+        //start the song
+        if (audioSource != null)
+        {
+            audioSource.Play();
+        }
+        else
+        {
+            Debug.LogError("No Audio Source Attached!");
+        }
+    }
+
+    private void PauseMusic()
+    {
+        // Toggle between play/pause
+        if (audioSource.isPlaying)
+        {
+            audioSource.Pause();
+        }
+        else
+        {
+            IEnumerator startCoroutine = StartMusicWithDelay(3);
+            // Start music
+            StartCoroutine(startCoroutine);
         }
     }
 }

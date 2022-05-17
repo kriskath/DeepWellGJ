@@ -19,6 +19,15 @@ public class InputSystem : MonoBehaviour
     //event called when note is destroyed. true = note hit, false = note missed.
     public static event Action<bool> OnNoteDestroyed;
 
+    //event called when game is paused
+    public static event Action OnGamePaused;
+
+    //breathe action bound in Input System
+    private InputAction breatheAction;
+
+    //pause action bound in Input System
+    private InputAction pauseAction;
+
     private void Awake()
     {
         // If there is an instance, and it's not me, delete myself.
@@ -42,14 +51,24 @@ public class InputSystem : MonoBehaviour
         // Map HitNote to any key press
         Keyboard.current.onTextInput += HitNote;
 
+        // Get current input map
+        InputActionMap inputActions = GetComponent<PlayerInput>().currentActionMap;
+
         // Map OnBreathe to input
-        GetComponent<PlayerInput>().onActionTriggered += OnBreathe;
+        breatheAction = inputActions.FindAction("Breathe");
+        breatheAction.performed += OnBreathe;
+
+        // Map OnPause to input
+        pauseAction = inputActions.FindAction("Pause");
+        pauseAction.performed += OnPause;
     }
 
     private void HitNote(char keyPressed)  
     {
-        // Ignore spacebar (breath)
-        if (keyPressed == ' ') {
+        // Ignore breath and pause and while counting down
+        if (breatheAction.WasPressedThisFrame() || 
+            pauseAction.triggered ||
+            !GetComponent<PlayerInput>().actions.enabled) {
             return;
         }
 
@@ -99,24 +118,27 @@ public class InputSystem : MonoBehaviour
         }
     }
 
-    public void OnBreathe(InputAction.CallbackContext context) {
-        // When done breathing
-        if (context.action.name == "Breathe" && context.performed) {
-            // Might want to have a OnSongChanged event so we only need to get secondsperbeat once
-            float breatheDurationInBeats = (float) context.duration / SongManager.Instance.SecondsPerBeat;
-            Debug.Log("Breathed for " + breatheDurationInBeats + " beats");
+    public void OnBreathe(InputAction.CallbackContext context) 
+    {
+        // Might want to have a OnSongChanged event so we only need to get secondsperbeat once
+        float breatheDurationInBeats = (float) context.duration / SongManager.Instance.SecondsPerBeat;
+        Debug.Log("Breathed for " + breatheDurationInBeats + " beats");
 
-            // If breath too short or long
-            if (breatheDurationInBeats < StressManager.Instance.MinBreathTimeInBeats || 
-                breatheDurationInBeats > StressManager.Instance.MaxBreathTimeInBeats) {
-                StressManager.Instance.AddStress(false);
-                Debug.Log("Failed breath");
-            }
-            // If breathe long enough
-            else { 
-                StressManager.Instance.RemoveStress();
-                Debug.Log("Successful breath");
-            }
+        // If breath too short or long
+        if (breatheDurationInBeats < StressManager.Instance.MinBreathTimeInBeats || 
+            breatheDurationInBeats > StressManager.Instance.MaxBreathTimeInBeats) {
+            StressManager.Instance.AddStress(false);
+            Debug.Log("Failed breath");
         }
+        // If breathe long enough
+        else { 
+            StressManager.Instance.RemoveStress();
+            Debug.Log("Successful breath");
+        }
+    }
+
+    public void OnPause(InputAction.CallbackContext context)
+    {
+        OnGamePaused.Invoke();
     }
 }
