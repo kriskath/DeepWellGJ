@@ -103,7 +103,7 @@ public class InputSystem : MonoBehaviour
 
     public void DestroyNote(GameObject gameNote, bool isHit) 
     {
-        Destroy(gameNote.gameObject);
+        gameNote.gameObject.SetActive(false);
         // Invoke event, pass true for hit
         OnNoteDestroyed?.Invoke(isHit);
         // Event subscribers will play sound effects, trigger animation, etc

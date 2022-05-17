@@ -164,7 +164,13 @@ public class SongManager : MonoBehaviour
     private void CreateNote()
     {
         //create note 
-        GameNote musicNote = Instantiate(gameNotePrefab, MusicDisplay.Instance.StartPos.position, Quaternion.identity).GetComponent<GameNote>(); 
+        GameNote musicNote = ObjectPool.Instance.GetPooledObject().GetComponent<GameNote>();
+        if (musicNote)
+        {
+            musicNote.gameObject.transform.position = MusicDisplay.Instance.StartPos.position;
+            musicNote.gameObject.transform.rotation = Quaternion.identity;
+            musicNote.gameObject.SetActive(true);
+        }
 
         //fill note with data. (beatOfThisNote, valid input data)
         musicNote.BeatOfThisNote(currentSong.notes[nextNoteIndex].notePosInBeats);
@@ -179,6 +185,10 @@ public class SongManager : MonoBehaviour
         {
             //transparency effect
             musicNote.SetSpriteColor(new Color(1, 1, 1, 0.5f));
+        }
+        else
+        {
+            musicNote.SetSpriteColor(new Color(1, 1, 1, 1f));
         }
     }
 
