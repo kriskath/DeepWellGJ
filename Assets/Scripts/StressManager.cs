@@ -28,6 +28,7 @@ public class StressManager : MonoBehaviour
     public float MaxBreathTimeInBeats => maxBreathTimeInBeats;
 
     private int stressLevel = 0;
+    public int StressLevel => stressLevel;
 
     private void Awake()
     {
