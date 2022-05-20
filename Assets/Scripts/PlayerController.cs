@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using System;
 
 public class PlayerController : MonoBehaviour
 {
@@ -23,6 +24,9 @@ public class PlayerController : MonoBehaviour
 
     private void KeyHit(char key)
     {
+        // Ignore non-alphabet characters 
+        if (!Char.IsLetter(key)) { return; }
+
         foreach (AnimatorControllerParameter p in animator.parameters)
             if (p.type == AnimatorControllerParameterType.Trigger)
                 animator.ResetTrigger(p.name);

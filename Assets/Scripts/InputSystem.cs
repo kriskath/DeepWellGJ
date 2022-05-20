@@ -66,11 +66,14 @@ public class InputSystem : MonoBehaviour
     private void HitNote(char keyPressed)  
     {
         // Ignore breath and pause and while counting down
-        if (breatheAction.WasPressedThisFrame() || 
+        if (
+            breatheAction.phase == InputActionPhase.Started || 
             pauseAction.triggered ||
             !GetComponent<PlayerInput>().actions.enabled) {
             return;
         }
+
+        Debug.Log(breatheAction.phase);
 
         List<Collider2D> overlapNotes = new List<Collider2D>();
 
