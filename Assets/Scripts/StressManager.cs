@@ -16,6 +16,7 @@ public class StressManager : MonoBehaviour
 
     [Tooltip("Stress cap amount.")]
     [SerializeField] int stressCap = 100;
+    public int StressCap => stressCap;
 
     [Tooltip("The minimum time in beats player must breathe for to destress.")]
     [Min(0f)]

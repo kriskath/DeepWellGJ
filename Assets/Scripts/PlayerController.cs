@@ -5,7 +5,6 @@ using UnityEngine.InputSystem;
 
 public class PlayerController : MonoBehaviour
 {
-    //private SpriteRenderer spriteRenderer;
     private Animator animator;
     private StressManager stressManager;
 
