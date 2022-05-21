@@ -8,6 +8,13 @@ public class TextDisplay : MonoBehaviour
     [SerializeField]
     TMP_Text displayText;
 
+    [SerializeField]
+    Color playerTextColor;
+    
+    [SerializeField]
+    Color callerTextColor;
+
+
     bool canAppend = false;
 
 
@@ -20,7 +27,7 @@ public class TextDisplay : MonoBehaviour
     public void ClearTextBox()
     {
         displayText.text = "";
-        displayText.color = Color.yellow;
+        displayText.color = playerTextColor;
         canAppend = true;
     }
 
@@ -30,7 +37,7 @@ public class TextDisplay : MonoBehaviour
         {
             // Update display text
             displayText.text = textToDisplay;
-            displayText.color = Color.white;
+            displayText.color = callerTextColor;
             canAppend = false;
         }
     }
