@@ -11,6 +11,9 @@ public class InputSystem : MonoBehaviour
     [Tooltip("Text Display system for the song script.")]
     [SerializeField] TextDisplay textDisplay;
 
+    [Tooltip("Circle effect when breathing.")]
+    [SerializeField] BreathCircle breathCircle;
+
     public static InputSystem Instance { get; private set; }
 
     //used to detect note hit overlap
@@ -56,7 +59,8 @@ public class InputSystem : MonoBehaviour
 
         // Map OnBreathe to input
         breatheAction = inputActions.FindAction("Breathe");
-        breatheAction.performed += OnBreathe;
+        breatheAction.started += OnBreathStarted;
+        breatheAction.performed += OnBreathStopped;
 
         // Map OnPause to input
         pauseAction = inputActions.FindAction("Pause");
@@ -121,22 +125,39 @@ public class InputSystem : MonoBehaviour
         }
     }
 
-    public void OnBreathe(InputAction.CallbackContext context) 
+    public void OnBreathStarted(InputAction.CallbackContext context)
+    {
+        breathCircle.PlayBreathAnimation(true);
+    }
+
+    public void OnBreathStopped(InputAction.CallbackContext context) 
     {
         // Might want to have a OnSongChanged event so we only need to get secondsperbeat once
         float breatheDurationInBeats = (float) context.duration / SongManager.Instance.SecondsPerBeat;
         Debug.Log("Breathed for " + breatheDurationInBeats + " beats");
 
-        // If breath too short or long
-        if (breatheDurationInBeats < StressManager.Instance.MinBreathTimeInBeats || 
-            breatheDurationInBeats > StressManager.Instance.MaxBreathTimeInBeats) {
-            StressManager.Instance.AddStress(false);
-            Debug.Log("Failed breath");
-        }
-        // If breathe long enough
-        else { 
+        // // If breath too short or long
+        // if (breatheDurationInBeats < StressManager.Instance.MinBreathTimeInBeats || 
+        //     breatheDurationInBeats > StressManager.Instance.MaxBreathTimeInBeats) {
+        //     StressManager.Instance.AddStress(false);
+        //     Debug.Log("Failed breath");
+        // }
+        // // If breathe long enough
+        // else { 
+        //     StressManager.Instance.RemoveStress();
+        //     Debug.Log("Successful breath");
+        // }
+
+        breathCircle.PlayBreathAnimation(false);
+        if (breathCircle.CheckBreathSuccess())
+        {
             StressManager.Instance.RemoveStress();
             Debug.Log("Successful breath");
+        }
+        else
+        {
+            StressManager.Instance.AddStress(false);
+            Debug.Log("Failed breath");
         }
     }
 
