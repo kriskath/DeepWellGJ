@@ -36,6 +36,11 @@ public class SongManager : MonoBehaviour
     private List<Song> songs = new List<Song>();
 
     [Space]
+    [Header("Sprite Containers")]
+
+    [Tooltip("Default sprite display")]
+    [SerializeField]
+    private Sprite defaultSprite;
 
     [Tooltip("Alphabet to display on game notes.")]
     [SerializeField]
@@ -177,17 +182,16 @@ public class SongManager : MonoBehaviour
         musicNote.KeyOfThisNote = currentSong.notes[nextNoteIndex].keyOfThisNote;
         musicNote.IsInput = currentSong.notes[nextNoteIndex].isInput;
 
-        if (musicNote.IsInput)
-            musicNote.SetSprite(alphabet[musicNote.KeyOfThisNote - 'a']);
-
         //format if not input
         if (!musicNote.IsInput)
         {
             //transparency effect
+            musicNote.SetSprite(defaultSprite);
             musicNote.SetSpriteColor(new Color(1, 1, 1, 0.5f));
         }
         else
         {
+            musicNote.SetSprite(alphabet[musicNote.KeyOfThisNote - 'a']);
             musicNote.SetSpriteColor(new Color(1, 1, 1, 1f));
         }
     }
