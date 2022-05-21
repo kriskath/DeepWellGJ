@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Hole_In_One
   m_EditorClassIdentifier: 
   song: {fileID: 8300000, guid: 7ad8984d219a38843b12a0e196860454, type: 3}
-  bpm: 29
+  bpm: 30
   notes:
   - notePosInBeats: 1
     keyOfThisNote: 45
