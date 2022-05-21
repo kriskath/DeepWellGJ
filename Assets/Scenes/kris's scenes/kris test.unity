@@ -1785,7 +1785,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: ed961bfb0b650a348987c3309cb5df95, type: 3}
+  m_Sprite: {fileID: 21300000, guid: a8269596f0809614fb45c381469deee2, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -1904,6 +1904,8 @@ MonoBehaviour:
   - {fileID: 1273110246, guid: c4c8b42ed7d6ffc4d8b768a290d8e0e5, type: 3}
   - {fileID: 1386479217, guid: c4c8b42ed7d6ffc4d8b768a290d8e0e5, type: 3}
   - {fileID: 1077185441, guid: c4c8b42ed7d6ffc4d8b768a290d8e0e5, type: 3}
+  playerSpeechBubble: {fileID: 21300000, guid: ed961bfb0b650a348987c3309cb5df95, type: 3}
+  npcSpeechBubble: {fileID: 21300000, guid: a8269596f0809614fb45c381469deee2, type: 3}
 --- !u!82 &2044304682
 AudioSource:
   m_ObjectHideFlags: 0

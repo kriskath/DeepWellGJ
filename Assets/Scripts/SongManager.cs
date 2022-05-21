@@ -68,7 +68,12 @@ public class SongManager : MonoBehaviour
 
     private Queue<Song.NoteData> textToDisplay = new Queue<Song.NoteData>();
 
-
+    // change speech bubble tail based on who is talking
+    private SpriteRenderer speechRenderer;
+    [SerializeField]
+    private Sprite playerSpeechBubble;
+    [SerializeField]
+    private Sprite npcSpeechBubble;
 
     private void Awake()
     {
@@ -94,6 +99,8 @@ public class SongManager : MonoBehaviour
 
         // Bind pausing music to OnGamePaused
         InputSystem.OnGamePaused += PauseMusic;
+
+        speechRenderer = GameObject.Find("MusicDisplay").transform.Find("MusicBar").gameObject.GetComponent<SpriteRenderer>();
     }
 
     void Start()
@@ -157,6 +164,12 @@ public class SongManager : MonoBehaviour
             {
                 StartCoroutine(CallClearTextBox());
             }
+
+            // change speech bubble tail based on who is talking
+            if (oldCurIsInput)
+                speechRenderer.sprite = playerSpeechBubble;
+            else
+                speechRenderer.sprite = npcSpeechBubble;
         }
     }
 
