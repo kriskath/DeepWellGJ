@@ -11,8 +11,11 @@ namespace MenuAsset
 
     public class MainMenu : MonoBehaviour
     {
-        [Tooltip("Input the desired scene build index. If left at default value then next build index will be loaded.")]
-        [SerializeField] private int sceneBuildIndex = -1;
+        [Tooltip("Input the desired play game index. If left at default value then next build index will be loaded.")]
+        [SerializeField] private int playGameIndex = -1;
+
+        [Tooltip("Input the desired tutorial scene index. If left at default value then next build index will be loaded.")]
+        [SerializeField] private int tutorialIndex = -1;
 
         [Tooltip("The first button selected to hover on when navigating to options menu.")]
         [SerializeField] private GameObject optionsFirstButton;
@@ -20,9 +23,23 @@ namespace MenuAsset
         public void PlayGame()
         {
             //load given scene value
-            if (sceneBuildIndex != -1)
+            if (playGameIndex != -1)
             {
-                SceneManager.LoadScene(sceneBuildIndex);
+                SceneManager.LoadScene(playGameIndex);
+            }
+            //load next scene in build order
+            else
+            {
+                SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+            }
+        }
+
+        public void LoadTutorial()
+        {
+            //load given scene value
+            if (tutorialIndex != -1)
+            {
+                SceneManager.LoadScene(tutorialIndex);
             }
             //load next scene in build order
             else
