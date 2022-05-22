@@ -96,6 +96,7 @@ public class SongManager : MonoBehaviour
 
 
     private bool gameOver = false;
+    public bool IsGameOver => gameOver;
 
 
     private void Awake()
@@ -159,6 +160,9 @@ public class SongManager : MonoBehaviour
 
             UpdateText();
         }
+
+        if (nextNoteIndex >= currentSong.notes.Length + notesShownInAdvance - 1)
+            GameOver();
     }
 
     private void CheckToSpawnNote()
@@ -225,7 +229,7 @@ public class SongManager : MonoBehaviour
         }
     }
 
-    IEnumerator CallClearTextBox()
+    private IEnumerator CallClearTextBox()
     {
         yield return new WaitForSeconds(secondsPerBeat * beatsTillClearingTextBox);
         textDisplay.ClearTextBox();
@@ -337,8 +341,18 @@ public class SongManager : MonoBehaviour
 
     private void GameOver()
     {
+        if (!gameOver)
+        {
+            gameOver = true;
+            StartCoroutine(EndGameCoroutine());
+        }
+    }
+
+    private IEnumerator EndGameCoroutine()
+    {
+        yield return new WaitForSeconds(5);
+        StressManager.Instance.CallGameOver();
         gameOverDisplay.SetActive(true);
-        gameOver = true;
         audioSource.Pause();
     }
 }

@@ -77,7 +77,13 @@ public class StressManager : MonoBehaviour
         // Check for gameover
         if (stressLevel == stressCap) 
         {
-            OnGameOver?.Invoke();
+            CallGameOver();
         }
     }
+
+    public void CallGameOver()
+    {
+        OnGameOver?.Invoke();
+    }
+
 }
