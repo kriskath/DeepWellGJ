@@ -1,0 +1,471 @@
+fileFormatVersion: 2
+guid: 4b898bcbc601d42a79623821c9f75215
+TextureImporter:
+  internalIDToNameTable: []
+  externalObjects: {}
+  serializedVersion: 11
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMasterTextureLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Server
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: MC_NEUTRAL_NOT_TALK_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1723
+        width: 222
+        height: 325
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 364d7df09607c4d6eb89b30b2c19ad10
+      internalID: 793423690
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MC_NEUTRAL_NOT_TALK_1
+      rect:
+        serializedVersion: 2
+        x: 222
+        y: 1723
+        width: 222
+        height: 325
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ccf1ae6cdf65742ffb94b3a604bf87bd
+      internalID: -403186262
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MC_NEUTRAL_NOT_TALK_2
+      rect:
+        serializedVersion: 2
+        x: 444
+        y: 1723
+        width: 222
+        height: 325
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 916ccad7627c149a9bc3b191fd07c79a
+      internalID: 1209877881
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MC_NEUTRAL_NOT_TALK_3
+      rect:
+        serializedVersion: 2
+        x: 666
+        y: 1723
+        width: 222
+        height: 325
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 17863800894bb464494c0b5e7922115d
+      internalID: -335983130
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MC_NEUTRAL_NOT_TALK_4
+      rect:
+        serializedVersion: 2
+        x: 888
+        y: 1723
+        width: 222
+        height: 325
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8f99aa3424be44d5ba0bdb9c2ed9bd59
+      internalID: 1903741703
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MC_NEUTRAL_NOT_TALK_8
+      rect:
+        serializedVersion: 2
+        x: 2689
+        y: 1723
+        width: 222
+        height: 325
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2da932758540b4536a828c6839e38d11
+      internalID: -1799994001
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MC_NEUTRAL_NOT_TALK_9
+      rect:
+        serializedVersion: 2
+        x: 2912
+        y: 1723
+        width: 222
+        height: 325
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 09a84a3fd341f4addbfd666034f4f6a1
+      internalID: -784050329
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MC_NEUTRAL_NOT_TALK_10
+      rect:
+        serializedVersion: 2
+        x: 3136
+        y: 1723
+        width: 222
+        height: 325
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: aed95027154c84dcb9fe2f194615dc55
+      internalID: 1209292024
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MC_NEUTRAL_NOT_TALK_7
+      rect:
+        serializedVersion: 2
+        x: 2467
+        y: 1723
+        width: 222
+        height: 325
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 104e7214c3f9741d3ab0062cf9734d87
+      internalID: -541861647
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MC_NEUTRAL_NOT_TALK_33
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 976
+        width: 222
+        height: 325
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9197541e480c346719d00a6b690d452d
+      internalID: -238869446
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MC_NEUTRAL_NOT_TALK_34
+      rect:
+        serializedVersion: 2
+        x: 220
+        y: 976
+        width: 222
+        height: 325
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7bb16b650346e4b10aa6d22e1a3bfc1c
+      internalID: 417157170
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MC_NEUTRAL_NOT_TALK_35
+      rect:
+        serializedVersion: 2
+        x: 441
+        y: 976
+        width: 222
+        height: 325
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f602ba2fbc0b74210809fd0c4867b8f8
+      internalID: 865681452
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MC_NEUTRAL_NOT_TALK_36
+      rect:
+        serializedVersion: 2
+        x: 668
+        y: 976
+        width: 222
+        height: 325
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3c598adea488545e595913ba00246cce
+      internalID: -86209108
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MC_NEUTRAL_NOT_TALK_37
+      rect:
+        serializedVersion: 2
+        x: 893
+        y: 976
+        width: 222
+        height: 325
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7c9163ee735b04f4bbe8158502403037
+      internalID: 887903995
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    nameFileIdTable:
+      MC_NEUTRAL_NOT_TALK_2: 1209877881
+      MC_NEUTRAL_NOT_TALK_14: 1971027170
+      MC_NEUTRAL_NOT_TALK_17: 256767511
+      MC_NEUTRAL_NOT_TALK_19: 295437637
+      MC_NEUTRAL_NOT_TALK_34: 417157170
+      MC_NEUTRAL_NOT_TALK_28: -1158120817
+      MC_NEUTRAL_NOT_TALK_29: 1816738176
+      MC_NEUTRAL_NOT_TALK_30: -1085303260
+      MC_NEUTRAL_NOT_TALK_38: 1541951334
+      MC_NEUTRAL_NOT_TALK_1: -403186262
+      MC_NEUTRAL_NOT_TALK_11: -1491194195
+      MC_NEUTRAL_NOT_TALK_36: -86209108
+      MC_NEUTRAL_NOT_TALK_27: 1509407813
+      MC_NEUTRAL_NOT_TALK_18: -264594104
+      MC_NEUTRAL_NOT_TALK_9: -784050329
+      MC_NEUTRAL_NOT_TALK_23: 584141664
+      MC_NEUTRAL_NOT_TALK_25: 1371555062
+      MC_NEUTRAL_NOT_TALK_10: 1209292024
+      MC_NEUTRAL_NOT_TALK_20: -208509727
+      MC_NEUTRAL_NOT_TALK_16: -1281112615
+      MC_NEUTRAL_NOT_TALK_4: 1903741703
+      MC_NEUTRAL_NOT_TALK_35: 865681452
+      MC_NEUTRAL_NOT_TALK_41: -505792673
+      MC_NEUTRAL_NOT_TALK_22: -2032082348
+      MC_NEUTRAL_NOT_TALK_7: -541861647
+      MC_NEUTRAL_NOT_TALK_12: -1194150004
+      MC_NEUTRAL_NOT_TALK_42: 1223133341
+      MC_NEUTRAL_NOT_TALK_6: -1539985981
+      MC_NEUTRAL_NOT_TALK_31: 1960544377
+      MC_NEUTRAL_NOT_TALK_26: 1824479137
+      MC_NEUTRAL_NOT_TALK_15: 626694908
+      MC_NEUTRAL_NOT_TALK_33: -238869446
+      MC_NEUTRAL_NOT_TALK_32: 1800125906
+      MC_NEUTRAL_NOT_TALK_40: -1367013875
+      MC_NEUTRAL_NOT_TALK_8: -1799994001
+      MC_NEUTRAL_NOT_TALK_0: 793423690
+      MC_NEUTRAL_NOT_TALK_24: 1841309352
+      MC_NEUTRAL_NOT_TALK_3: -335983130
+      MC_NEUTRAL_NOT_TALK_21: -1210155452
+      MC_NEUTRAL_NOT_TALK_39: 744964789
+      MC_NEUTRAL_NOT_TALK_37: 887903995
+      MC_NEUTRAL_NOT_TALK_13: 560687214
+      MC_NEUTRAL_NOT_TALK_5: 2124521862
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

@@ -46,7 +46,6 @@ public class SongManager : MonoBehaviour
     [SerializeField]
     private List<Sprite> alphabet = new List<Sprite>();
 
-
     private Song currentSong = null;
     private AudioSource audioSource = null;
     private int nextNoteIndex = 0; //the index of the next note to be displayed
@@ -68,7 +67,7 @@ public class SongManager : MonoBehaviour
 
     private Queue<Song.NoteData> textToDisplay = new Queue<Song.NoteData>();
 
-
+    private Animator frogAnimator;
 
     private void Awake()
     {
@@ -98,6 +97,9 @@ public class SongManager : MonoBehaviour
 
     void Start()
     {
+        // Find frog mouth animator
+        frogAnimator = GameObject.Find("Frog").transform.GetChild(0).GetComponent<Animator>();
+
         IEnumerator startCoroutine = StartMusicWithDelay(3);
         // Start music
         StartCoroutine(startCoroutine);
@@ -145,6 +147,19 @@ public class SongManager : MonoBehaviour
             textToDisplay.Peek().notePosInBeats <= songPosInBeats)
         {
             bool oldCurIsInput = textToDisplay.Peek().isInput;
+
+            // If not input, make frog talk
+            if (!oldCurIsInput)
+            {
+                if (textToDisplay.Peek().showNote)
+                {
+                    frogAnimator.SetTrigger("TalkOnce");
+                }
+                else
+                {
+                    frogAnimator.SetTrigger("TalkMultiple");
+                }
+            }
 
             textDisplay.UpdateText(textToDisplay.Peek().displayText, textToDisplay.Dequeue().isInput);
 

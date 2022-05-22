@@ -6,20 +6,32 @@ using System;
 
 public class PlayerController : MonoBehaviour
 {
+    [SerializeField]
+    private Animator mouthAnimator;
+
     private Animator animator;
-    private StressManager stressManager;
+
+    //breathe action bound in Input System
+    private InputAction breatheAction;
 
     private void Awake()
     {
         animator = GetComponent<Animator>();
-        stressManager = GameObject.Find("StressManager").GetComponent<StressManager>();
         Keyboard.current.onTextInput += KeyHit;
+
+        // Get current input map
+        InputActionMap inputActions = GameObject.FindObjectOfType<PlayerInput>().currentActionMap;
+
+        // Map OnBreathe to input
+        breatheAction = inputActions.FindAction("Breathe");
+        breatheAction.started += StartBreatheAnim;
+        breatheAction.performed += StopBreatheAnim;
     }
 
     // Update is called once per frame
     void Update()
     {
-        animator.SetInteger("stressLevel", stressManager.StressLevel);
+        animator.SetInteger("stressLevel", StressManager.Instance.StressLevel);
     }
 
     private void KeyHit(char key)
@@ -27,9 +39,33 @@ public class PlayerController : MonoBehaviour
         // Ignore non-alphabet characters 
         if (!Char.IsLetter(key)) { return; }
 
-        foreach (AnimatorControllerParameter p in animator.parameters)
-            if (p.type == AnimatorControllerParameterType.Trigger)
-                animator.ResetTrigger(p.name);
-        animator.SetTrigger(key.ToString());
+        // foreach (AnimatorControllerParameter p in animator.parameters)
+        //     if (p.type == AnimatorControllerParameterType.Trigger)
+        //         animator.ResetTrigger(p.name);
+        // animator.SetTrigger(key.ToString());
+
+        // Ignore if currently breathing
+        if (animator.GetCurrentAnimatorStateInfo(0).IsName("Player_Breathing")) { return; }
+
+        // If panicking, separate sprite
+        if (animator.GetCurrentAnimatorStateInfo(0).IsName("Player_Concerned"))
+        {
+            animator.SetTrigger("Talking");
+        }
+        else 
+        {
+            mouthAnimator.SetInteger("stressLevel", StressManager.Instance.StressLevel);
+            mouthAnimator.SetTrigger("Talking");
+        }
+    }
+
+    public void StartBreatheAnim(InputAction.CallbackContext context)
+    {
+        animator.SetTrigger("BreathStarted");
+    }
+
+    public void StopBreatheAnim(InputAction.CallbackContext context)
+    {
+        animator.SetTrigger("BreathStopped");
     }
 }

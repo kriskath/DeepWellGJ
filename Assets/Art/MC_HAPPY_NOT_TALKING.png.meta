@@ -1,0 +1,514 @@
+fileFormatVersion: 2
+guid: 5ac4b490768374bf0ac9afba7f6ea933
+TextureImporter:
+  internalIDToNameTable: []
+  externalObjects: {}
+  serializedVersion: 11
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMasterTextureLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Server
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: MC_HAPPY_NOT_TALKING_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1721
+        width: 217
+        height: 327
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: af64a848772fa4327b34e746ef579d1b
+      internalID: -78551232
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MC_HAPPY_NOT_TALKING_1
+      rect:
+        serializedVersion: 2
+        x: 219
+        y: 1723
+        width: 220
+        height: 325
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 33f7786b4a7be4b7387d2f793c107401
+      internalID: -361349689
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MC_HAPPY_NOT_TALKING_2
+      rect:
+        serializedVersion: 2
+        x: 443
+        y: 1723
+        width: 220
+        height: 325
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 004cba31f591a46af9d2ef876028b49b
+      internalID: 1678031706
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MC_HAPPY_NOT_TALKING_3
+      rect:
+        serializedVersion: 2
+        x: 665
+        y: 1721
+        width: 220
+        height: 327
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: da8e6ccf00f7841caa366a336b3bb5a4
+      internalID: 83881509
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MC_HAPPY_NOT_TALKING_4
+      rect:
+        serializedVersion: 2
+        x: 1455
+        y: 1721
+        width: 218
+        height: 327
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e19ca76235b1f45e2a00487384859f75
+      internalID: -1405637985
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MC_HAPPY_NOT_TALKING_5
+      rect:
+        serializedVersion: 2
+        x: 1677
+        y: 1723
+        width: 244
+        height: 325
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a3668c59b74554583888ee70c4669b24
+      internalID: 929088050
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MC_HAPPY_NOT_TALKING_6
+      rect:
+        serializedVersion: 2
+        x: 1925
+        y: 1723
+        width: 252
+        height: 325
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9de2f210b32da48cbb1dcd3d3ebe7ed2
+      internalID: 752754714
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MC_HAPPY_NOT_TALKING_7
+      rect:
+        serializedVersion: 2
+        x: 2737
+        y: 1721
+        width: 252
+        height: 327
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: eed04047756ae4bffb1c5a05b931365a
+      internalID: 1777286737
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MC_HAPPY_NOT_TALKING_8
+      rect:
+        serializedVersion: 2
+        x: 3551
+        y: 1721
+        width: 218
+        height: 327
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e910c3546df974b6cbc3a9828f057325
+      internalID: -704163900
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MC_HAPPY_NOT_TALKING_9
+      rect:
+        serializedVersion: 2
+        x: 3774
+        y: 1721
+        width: 218
+        height: 327
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3ee08b1c00a5e485ab6de0736ca981e5
+      internalID: 1394580651
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MC_HAPPY_NOT_TALKING_13
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 973
+        width: 217
+        height: 328
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1d3f969be738d43e5a13528e1f222f72
+      internalID: 1261319755
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MC_HAPPY_NOT_TALKING_14
+      rect:
+        serializedVersion: 2
+        x: 221
+        y: 973
+        width: 220
+        height: 328
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e5972633fde8947508f8ccc330188f26
+      internalID: -1428510462
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MC_HAPPY_NOT_TALKING_15
+      rect:
+        serializedVersion: 2
+        x: 443
+        y: 973
+        width: 220
+        height: 328
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 00e132eccb866486db7d2dd77d11f19e
+      internalID: 445607978
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MC_HAPPY_NOT_TALKING_16
+      rect:
+        serializedVersion: 2
+        x: 1233
+        y: 973
+        width: 220
+        height: 328
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 30fb93dde6ec640029c2366f3920b4b2
+      internalID: -136188184
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MC_HAPPY_NOT_TALKING_17
+      rect:
+        serializedVersion: 2
+        x: 2021
+        y: 973
+        width: 220
+        height: 328
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b64d585d911d1467db341566597d92ed
+      internalID: 1230773234
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MC_HAPPY_NOT_TALKING_18
+      rect:
+        serializedVersion: 2
+        x: 2243
+        y: 973
+        width: 248
+        height: 330
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c0b5cf338feb047368a6e3be9c1dcb1d
+      internalID: -1888069725
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MC_HAPPY_NOT_TALKING_19
+      rect:
+        serializedVersion: 2
+        x: 2495
+        y: 973
+        width: 242
+        height: 328
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f750cdc968210413f911c9d745cbebde
+      internalID: -1474325950
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    nameFileIdTable:
+      MC_HAPPY_NOT_TALKING_17: 1230773234
+      MC_HAPPY_NOT_TALKING_20: 2073801311
+      MC_HAPPY_NOT_TALKING_12: 1825378804
+      MC_HAPPY_NOT_TALKING_18: -1888069725
+      MC_HAPPY_NOT_TALKING_19: -1474325950
+      MC_HAPPY_NOT_TALKING_0: -78551232
+      MC_HAPPY_NOT_TALKING_6: 752754714
+      MC_HAPPY_NOT_TALKING_21: -2089300879
+      MC_HAPPY_NOT_TALKING_15: 445607978
+      MC_HAPPY_NOT_TALKING_9: 1394580651
+      MC_HAPPY_NOT_TALKING_14: -1428510462
+      MC_HAPPY_NOT_TALKING_5: 929088050
+      MC_HAPPY_NOT_TALKING_11: -1047795569
+      MC_HAPPY_NOT_TALKING_16: -136188184
+      MC_HAPPY_NOT_TALKING_2: 1678031706
+      MC_HAPPY_NOT_TALKING_1: -361349689
+      MC_HAPPY_NOT_TALKING_7: 1777286737
+      MC_HAPPY_NOT_TALKING_4: -1405637985
+      MC_HAPPY_NOT_TALKING_10: 1262718911
+      MC_HAPPY_NOT_TALKING_22: -1114782917
+      MC_HAPPY_NOT_TALKING_3: 83881509
+      MC_HAPPY_NOT_TALKING_13: 1261319755
+      MC_HAPPY_NOT_TALKING_8: -704163900
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
