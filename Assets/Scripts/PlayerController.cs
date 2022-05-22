@@ -28,6 +28,13 @@ public class PlayerController : MonoBehaviour
         breatheAction.performed += StopBreatheAnim;
     }
 
+    private void OnDisable()
+    {
+        Keyboard.current.onTextInput -= KeyHit;
+        breatheAction.started -= StartBreatheAnim;
+        breatheAction.performed -= StopBreatheAnim;
+    }
+
     // Update is called once per frame
     void Update()
     {

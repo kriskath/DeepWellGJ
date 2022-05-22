@@ -4,11 +4,6 @@ using UnityEngine;
 using UnityEngine.InputSystem;
 using TMPro;
 
-//Notes / TODO:
-// Have the Level Manager determine current song to play. Level Manager tells Song Manager which level it is. Song Manager should determine which song to play
-// Have Music player after a small countdown when level loads. Add a play function to add delay to start.
-// Have an Event raise when new song plays. 
-// Allow inputs when in calling state of song (pain)
 public class SongManager : MonoBehaviour
 {
 
@@ -91,7 +86,7 @@ public class SongManager : MonoBehaviour
     // change speech bubble tail based on who is talking
     private SpriteRenderer speechRenderer;
 
-    private bool isPaused;
+    private bool isPaused = false;
     public bool IsPaused => isPaused;
 
     private void Awake()
@@ -120,6 +115,7 @@ public class SongManager : MonoBehaviour
         InputSystem.OnGamePaused += TogglePause;
 
         speechRenderer = GameObject.Find("MusicDisplay").transform.Find("MusicBar").gameObject.GetComponent<SpriteRenderer>();
+        isPaused = false;
     }
 
     private void OnDisable()
@@ -293,17 +289,31 @@ public class SongManager : MonoBehaviour
         // Toggle between play/pause
         if (audioSource.isPlaying)
         {
-            audioSource.Pause();
             pauseMenu.SetActive(true);
+            audioSource.Pause();
+            ToggleScaleAndPauseVar(true);
+        }
+        else
+        {
+            pauseMenu.SetActive(false);
+            
+            IEnumerator startCoroutine = StartMusicWithDelay(3);
+            // Start music
+            StartCoroutine(startCoroutine);
+            
+            ToggleScaleAndPauseVar(false);
+        }
+    }
+
+    public void ToggleScaleAndPauseVar(bool pause)
+    {
+        if (pause)
+        {
             Time.timeScale = 0;
             isPaused = true;
         }
         else
         {
-            pauseMenu.SetActive(false);
-            IEnumerator startCoroutine = StartMusicWithDelay(3);
-            // Start music
-            StartCoroutine(startCoroutine);
             Time.timeScale = 1;
             isPaused = false;
         }
