@@ -425,7 +425,7 @@ MonoBehaviour:
   - notePosInBeats: 49
     keyOfThisNote: 45
     displayText: Wooooaaaahh~
-    showNote: 0
+    showNote: 1
     isInput: 0
   - notePosInBeats: 52
     keyOfThisNote: 45

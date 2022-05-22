@@ -1287,6 +1287,18 @@ PrefabInstance:
       propertyPath: countdownDisplay
       value: 
       objectReference: {fileID: 1981398044}
+    - target: {fileID: 3284816357537833795, guid: c8af003954e2cc14faa8e76c1218e0c8, type: 3}
+      propertyPath: defaultMusicSprite
+      value: 
+      objectReference: {fileID: 21300000, guid: acaa9d31882646c438337bda80f83812, type: 3}
+    - target: {fileID: 3284816357537833795, guid: c8af003954e2cc14faa8e76c1218e0c8, type: 3}
+      propertyPath: notesShownInAdvance
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3284816357537833795, guid: c8af003954e2cc14faa8e76c1218e0c8, type: 3}
+      propertyPath: beatsTillClearingTextBox
+      value: 0.1
+      objectReference: {fileID: 0}
     - target: {fileID: 3284816357537833805, guid: c8af003954e2cc14faa8e76c1218e0c8, type: 3}
       propertyPath: m_Name
       value: Song Manager
@@ -1528,6 +1540,14 @@ PrefabInstance:
     - target: {fileID: 6824741889835842147, guid: c8196a236e3b11b4d808cb22e8f9e439, type: 3}
       propertyPath: playerTextColor.r
       value: 0.3085966
+      objectReference: {fileID: 0}
+    - target: {fileID: 6824741889835842150, guid: c8196a236e3b11b4d808cb22e8f9e439, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.8625
+      objectReference: {fileID: 0}
+    - target: {fileID: 6824741889835842150, guid: c8196a236e3b11b4d808cb22e8f9e439, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: -64
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c8196a236e3b11b4d808cb22e8f9e439, type: 3}

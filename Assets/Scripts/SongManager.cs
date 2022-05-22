@@ -57,9 +57,9 @@ public class SongManager : MonoBehaviour
     [SerializeField]
     private GameObject countdownDisplay;
 
-    [Tooltip("Default sprite display")]
+    [Tooltip("Default music sprite display")]
     [SerializeField]
-    private Sprite defaultSprite;
+    private Sprite defaultMusicSprite;
 
 
 
@@ -124,7 +124,10 @@ public class SongManager : MonoBehaviour
         // Bind pausing music to OnGamePaused
         InputSystem.OnGamePaused += TogglePause;
 
+        //We can just get a reference...
         speechRenderer = GameObject.Find("MusicDisplay").transform.Find("MusicBar").gameObject.GetComponent<SpriteRenderer>();
+        speechRenderer.sprite = playerSpeechBubble;
+
         SetPaused(false);
         gameOver = false;
         StressManager.OnGameOver += GameOver;
@@ -191,17 +194,18 @@ public class SongManager : MonoBehaviour
             textToDisplay.Peek().notePosInBeats <= songPosInBeats)
         {
             bool oldCurIsInput = textToDisplay.Peek().isInput;
+            bool oldCurNoteIsShown = textToDisplay.Peek().showNote;
 
-            // If not input, make frog talk
+            // If not input
             if (!oldCurIsInput)
             {
-                if (textToDisplay.Peek().showNote)
+                if (oldCurNoteIsShown)
                 {
-                    frogAnimator.SetTrigger("TalkOnce");
+                    frogAnimator.SetTrigger("TalkMultiple");
                 }
                 else
                 {
-                    frogAnimator.SetTrigger("TalkMultiple");
+                    //frogAnimator.SetTrigger("TalkOnce");
                 }
             }
 
@@ -218,13 +222,13 @@ public class SongManager : MonoBehaviour
             }
 
             // change speech bubble tail based on who is talking
-            if (oldCurIsInput)
+            if (!oldCurIsInput && oldCurNoteIsShown)
             {
-                speechRenderer.sprite = playerSpeechBubble;
+                speechRenderer.sprite = npcSpeechBubble;
             }
             else
             {
-                speechRenderer.sprite = npcSpeechBubble;
+                speechRenderer.sprite = playerSpeechBubble;
             }
         }
     }
@@ -255,7 +259,7 @@ public class SongManager : MonoBehaviour
         if (!musicNote.IsInput)
         {
             //transparency effect
-            musicNote.SetSprite(defaultSprite);
+            musicNote.SetSprite(defaultMusicSprite);
             musicNote.SetSpriteColor(new Color(1, 1, 1, 0.5f));
         }
         else
