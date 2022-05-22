@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using System;
 
 // change character animation
 public class StressManager : MonoBehaviour
@@ -30,6 +31,10 @@ public class StressManager : MonoBehaviour
 
     private int stressLevel = 0;
     public int StressLevel => stressLevel;
+
+
+    public static event Action OnGameOver;
+
 
     private void Awake()
     {
@@ -72,14 +77,7 @@ public class StressManager : MonoBehaviour
         // Check for gameover
         if (stressLevel == stressCap) 
         {
-            //Debug.Log("Gameover");
+            OnGameOver?.Invoke();
         }
-        // Check for threshold, update so it's only called the first time
-        else if (stressLevel >= 0.5f * stressCap) {
-            // Update animations?
-            //Debug.Log("Getting pretty stressed!");
-        }
-
-        // Diminish over time?
     }
 }

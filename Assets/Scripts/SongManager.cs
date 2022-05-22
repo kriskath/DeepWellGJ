@@ -49,7 +49,10 @@ public class SongManager : MonoBehaviour
     private Sprite npcSpeechBubble;
 
     [SerializeField]
-    private GameObject pauseMenu;
+    private GameObject pauseDisplay;    
+    
+    [SerializeField]
+    private GameObject gameOverDisplay;
 
     [SerializeField]
     private GameObject countdownDisplay;
@@ -86,8 +89,14 @@ public class SongManager : MonoBehaviour
     // change speech bubble tail based on who is talking
     private SpriteRenderer speechRenderer;
 
+
     private bool isPaused = false;
     public bool IsPaused => isPaused;
+    private void SetPaused(bool pause) => isPaused = pause;
+
+
+    private bool gameOver = false;
+
 
     private void Awake()
     {
@@ -115,12 +124,15 @@ public class SongManager : MonoBehaviour
         InputSystem.OnGamePaused += TogglePause;
 
         speechRenderer = GameObject.Find("MusicDisplay").transform.Find("MusicBar").gameObject.GetComponent<SpriteRenderer>();
-        isPaused = false;
+        SetPaused(false);
+        gameOver = false;
+        StressManager.OnGameOver += GameOver;
     }
 
     private void OnDisable()
     {
         InputSystem.OnGamePaused -= TogglePause;
+        StressManager.OnGameOver -= GameOver;
     }
 
     void Start()
@@ -203,9 +215,13 @@ public class SongManager : MonoBehaviour
 
             // change speech bubble tail based on who is talking
             if (oldCurIsInput)
+            {
                 speechRenderer.sprite = playerSpeechBubble;
+            }
             else
+            {
                 speechRenderer.sprite = npcSpeechBubble;
+            }
         }
     }
 
@@ -289,13 +305,13 @@ public class SongManager : MonoBehaviour
         // Toggle between play/pause
         if (audioSource.isPlaying)
         {
-            pauseMenu.SetActive(true);
+            pauseDisplay.SetActive(true);
             audioSource.Pause();
             ToggleScaleAndPauseVar(true);
         }
         else
         {
-            pauseMenu.SetActive(false);
+            pauseDisplay.SetActive(false);
             
             IEnumerator startCoroutine = StartMusicWithDelay(3);
             // Start music
@@ -317,6 +333,13 @@ public class SongManager : MonoBehaviour
             Time.timeScale = 1;
             isPaused = false;
         }
+    }
+
+    private void GameOver()
+    {
+        gameOverDisplay.SetActive(true);
+        gameOver = true;
+        audioSource.Pause();
     }
 }
 
