@@ -1,0 +1,886 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e2d398e107de17e4aac688212dc8fd3f, type: 3}
+  m_Name: Welcome_To_Greg_Burger
+  m_EditorClassIdentifier: 
+  song: {fileID: 8300000, guid: ed2a0f4ebd4dc614285dde00cf20d44f, type: 3}
+  bpm: 30
+  notes:
+  - notePosInBeats: 1
+    keyOfThisNote: 45
+    displayText: "(Alright, you\u2019re almost at the front of the line. You\u2019ve
+      got this.) "
+    showNote: 0
+    isInput: 0
+  - notePosInBeats: 3
+    keyOfThisNote: 45
+    displayText: (You know exactly what you want to order, and how much it should
+      cost.)
+    showNote: 0
+    isInput: 0
+  - notePosInBeats: 5
+    keyOfThisNote: 45
+    displayText: "(There\u2019s no need to be nervous here, Baby. You\u2019ve done
+      this before.)"
+    showNote: 0
+    isInput: 0
+  - notePosInBeats: 7
+    keyOfThisNote: 45
+    displayText: "(... So why am I so anxious??? It\u2019s just food, for pete\u2019s
+      sake!)"
+    showNote: 0
+    isInput: 0
+  - notePosInBeats: 9
+    keyOfThisNote: 45
+    displayText: "(... But, then again\u2026 What if I mess it up?)"
+    showNote: 0
+    isInput: 0
+  - notePosInBeats: 11
+    keyOfThisNote: 45
+    displayText: (What if I stutter and order the wrong thing?)
+    showNote: 0
+    isInput: 0
+  - notePosInBeats: 13
+    keyOfThisNote: 45
+    displayText: (What if the people behind me are judging me for my tastes?)
+    showNote: 0
+    isInput: 0
+  - notePosInBeats: 15
+    keyOfThisNote: 45
+    displayText: "(What if, instead of my card, when I go to pay\u2026)"
+    showNote: 0
+    isInput: 0
+  - notePosInBeats: 17
+    keyOfThisNote: 45
+    displayText: (I drop my wallet and everything spills all over the place?!?)
+    showNote: 0
+    isInput: 0
+  - notePosInBeats: 19
+    keyOfThisNote: 45
+    displayText: "(There\u2019s so many people behind me in line, and I\u2019d have
+      to pick it all up, and-)"
+    showNote: 0
+    isInput: 0
+  - notePosInBeats: 21
+    keyOfThisNote: 45
+    displayText: (UGH!!)
+    showNote: 0
+    isInput: 0
+  - notePosInBeats: 23
+    keyOfThisNote: 45
+    displayText: "(You\u2019re okay, you\u2019re okay. Just\u2026 pretend. Go through
+      it again.)"
+    showNote: 0
+    isInput: 0
+  - notePosInBeats: 25
+    keyOfThisNote: 45
+    displayText: "(They\u2019ll ask a question\u2026 and I just have to respond to
+      it.)"
+    showNote: 0
+    isInput: 0
+  - notePosInBeats: 27
+    keyOfThisNote: 45
+    displayText: "(You don\u2019t have to say a ton\u2026)"
+    showNote: 0
+    isInput: 0
+  - notePosInBeats: 29
+    keyOfThisNote: 45
+    displayText: "(Just speak at the same rhythm they do. That\u2019s the way.)"
+    showNote: 0
+    isInput: 0
+  - notePosInBeats: 31
+    keyOfThisNote: 45
+    displayText: O
+    showNote: 1
+    isInput: 0
+  - notePosInBeats: 31.375
+    keyOfThisNote: 45
+    displayText: OK?
+    showNote: 1
+    isInput: 0
+  - notePosInBeats: 32
+    keyOfThisNote: 111
+    displayText: 
+    showNote: 1
+    isInput: 1
+  - notePosInBeats: 32.375
+    keyOfThisNote: 107
+    displayText: 
+    showNote: 1
+    isInput: 1
+  - notePosInBeats: 32.5
+    keyOfThisNote: 45
+    displayText: Are
+    showNote: 1
+    isInput: 0
+  - notePosInBeats: 32.75
+    keyOfThisNote: 45
+    displayText: Are you
+    showNote: 1
+    isInput: 0
+  - notePosInBeats: 33
+    keyOfThisNote: 45
+    displayText: Are you O
+    showNote: 1
+    isInput: 0
+  - notePosInBeats: 33.375
+    keyOfThisNote: 45
+    displayText: Are you OK?
+    showNote: 1
+    isInput: 0
+  - notePosInBeats: 33.5
+    keyOfThisNote: 121
+    displayText: 
+    showNote: 1
+    isInput: 1
+  - notePosInBeats: 33.75
+    keyOfThisNote: 101
+    displayText: 
+    showNote: 1
+    isInput: 1
+  - notePosInBeats: 34
+    keyOfThisNote: 97
+    displayText: 
+    showNote: 1
+    isInput: 1
+  - notePosInBeats: 34.375
+    keyOfThisNote: 104
+    displayText: 
+    showNote: 1
+    isInput: 1
+  - notePosInBeats: 34.5
+    keyOfThisNote: 45
+    displayText: How
+    showNote: 1
+    isInput: 0
+  - notePosInBeats: 34.75
+    keyOfThisNote: 45
+    displayText: How was
+    showNote: 1
+    isInput: 0
+  - notePosInBeats: 35
+    keyOfThisNote: 45
+    displayText: How was your
+    showNote: 1
+    isInput: 0
+  - notePosInBeats: 35.375
+    keyOfThisNote: 45
+    displayText: How was your day?
+    showNote: 1
+    isInput: 0
+  - notePosInBeats: 35.5
+    keyOfThisNote: 103
+    displayText: 
+    showNote: 1
+    isInput: 1
+  - notePosInBeats: 35.75
+    keyOfThisNote: 111
+    displayText: 
+    showNote: 1
+    isInput: 1
+  - notePosInBeats: 36
+    keyOfThisNote: 111
+    displayText: 
+    showNote: 1
+    isInput: 1
+  - notePosInBeats: 36.375
+    keyOfThisNote: 100
+    displayText: 
+    showNote: 1
+    isInput: 1
+  - notePosInBeats: 36.5
+    keyOfThisNote: 45
+    displayText: Are
+    showNote: 1
+    isInput: 0
+  - notePosInBeats: 36.75
+    keyOfThisNote: 45
+    displayText: Are you
+    showNote: 1
+    isInput: 0
+  - notePosInBeats: 37
+    keyOfThisNote: 45
+    displayText: Are you hun
+    showNote: 1
+    isInput: 0
+  - notePosInBeats: 37.375
+    keyOfThisNote: 45
+    displayText: Are you hungry?
+    showNote: 1
+    isInput: 0
+  - notePosInBeats: 37.5
+    keyOfThisNote: 121
+    displayText: 
+    showNote: 1
+    isInput: 1
+  - notePosInBeats: 37.75
+    keyOfThisNote: 101
+    displayText: 
+    showNote: 1
+    isInput: 1
+  - notePosInBeats: 38
+    keyOfThisNote: 97
+    displayText: 
+    showNote: 1
+    isInput: 1
+  - notePosInBeats: 38.375
+    keyOfThisNote: 104
+    displayText: 
+    showNote: 1
+    isInput: 1
+  - notePosInBeats: 38.5
+    keyOfThisNote: 45
+    displayText: Are
+    showNote: 1
+    isInput: 0
+  - notePosInBeats: 38.75
+    keyOfThisNote: 45
+    displayText: Are you
+    showNote: 1
+    isInput: 0
+  - notePosInBeats: 39
+    keyOfThisNote: 45
+    displayText: Are you rea
+    showNote: 1
+    isInput: 0
+  - notePosInBeats: 39.375
+    keyOfThisNote: 45
+    displayText: Are you ready?
+    showNote: 1
+    isInput: 0
+  - notePosInBeats: 39.5
+    keyOfThisNote: 115
+    displayText: 
+    showNote: 1
+    isInput: 1
+  - notePosInBeats: 39.75
+    keyOfThisNote: 117
+    displayText: 
+    showNote: 1
+    isInput: 1
+  - notePosInBeats: 40
+    keyOfThisNote: 114
+    displayText: 
+    showNote: 1
+    isInput: 1
+  - notePosInBeats: 40.375
+    keyOfThisNote: 101
+    displayText: 
+    showNote: 1
+    isInput: 1
+  - notePosInBeats: 40.5
+    keyOfThisNote: 45
+    displayText: "(Good, cause you\u2019re at the front of the line!)\r"
+    showNote: 0
+    isInput: 0
+  - notePosInBeats: 42.5
+    keyOfThisNote: 45
+    displayText: (Go ahead and order, champ!)
+    showNote: 0
+    isInput: 0
+  - notePosInBeats: 45
+    keyOfThisNote: 45
+    displayText: Wel
+    showNote: 1
+    isInput: 0
+  - notePosInBeats: 45.0703
+    keyOfThisNote: 45
+    displayText: Welcome
+    showNote: 1
+    isInput: 0
+  - notePosInBeats: 45.1406
+    keyOfThisNote: 45
+    displayText: Welcome to
+    showNote: 1
+    isInput: 0
+  - notePosInBeats: 45.2135
+    keyOfThisNote: 45
+    displayText: Welcome to Greg
+    showNote: 1
+    isInput: 0
+  - notePosInBeats: 45.2839
+    keyOfThisNote: 45
+    displayText: Welcome to Greg Bur
+    showNote: 1
+    isInput: 0
+  - notePosInBeats: 45.3542
+    keyOfThisNote: 45
+    displayText: Welcome to Greg Burger
+    showNote: 1
+    isInput: 0
+  - notePosInBeats: 45.4271
+    keyOfThisNote: 45
+    displayText: Welcome to Greg Burger what
+    showNote: 1
+    isInput: 0
+  - notePosInBeats: 45.4974
+    keyOfThisNote: 45
+    displayText: Welcome to Greg Burger what can
+    showNote: 1
+    isInput: 0
+  - notePosInBeats: 45.5703
+    keyOfThisNote: 45
+    displayText: Welcome to Greg Burger what can I
+    showNote: 1
+    isInput: 0
+  - notePosInBeats: 45.6406
+    keyOfThisNote: 45
+    displayText: Welcome to Greg Burger what can I get
+    showNote: 1
+    isInput: 0
+  - notePosInBeats: 45.7135
+    keyOfThisNote: 45
+    displayText: Welcome to Greg Burger what can I get for
+    showNote: 1
+    isInput: 0
+  - notePosInBeats: 45.7839
+    keyOfThisNote: 45
+    displayText: Welcome to Greg Burger what can I get for you
+    showNote: 1
+    isInput: 0
+  - notePosInBeats: 45.8542
+    keyOfThisNote: 45
+    displayText: Welcome to Greg Burger what can I get for you to
+    showNote: 1
+    isInput: 0
+  - notePosInBeats: 45.9271
+    keyOfThisNote: 45
+    displayText: Welcome to Greg Burger what can I get for you today?
+    showNote: 1
+    isInput: 0
+  - notePosInBeats: 46
+    keyOfThisNote: 103
+    displayText: 
+    showNote: 1
+    isInput: 1
+  - notePosInBeats: 46.0755
+    keyOfThisNote: 114
+    displayText: 
+    showNote: 1
+    isInput: 1
+  - notePosInBeats: 46.151
+    keyOfThisNote: 105
+    displayText: 
+    showNote: 1
+    isInput: 1
+  - notePosInBeats: 46.2292
+    keyOfThisNote: 108
+    displayText: 
+    showNote: 1
+    isInput: 1
+  - notePosInBeats: 46.3047
+    keyOfThisNote: 108
+    displayText: 
+    showNote: 1
+    isInput: 1
+  - notePosInBeats: 46.3828
+    keyOfThisNote: 101
+    displayText: 
+    showNote: 1
+    isInput: 1
+  - notePosInBeats: 46.4609
+    keyOfThisNote: 100
+    displayText: 
+    showNote: 1
+    isInput: 1
+  - notePosInBeats: 46.5365
+    keyOfThisNote: 99
+    displayText: 
+    showNote: 1
+    isInput: 1
+  - notePosInBeats: 46.6146
+    keyOfThisNote: 104
+    displayText: 
+    showNote: 1
+    isInput: 1
+  - notePosInBeats: 46.6901
+    keyOfThisNote: 101
+    displayText: 
+    showNote: 1
+    isInput: 1
+  - notePosInBeats: 46.7682
+    keyOfThisNote: 101
+    displayText: 
+    showNote: 1
+    isInput: 1
+  - notePosInBeats: 46.8438
+    keyOfThisNote: 115
+    displayText: 
+    showNote: 1
+    isInput: 1
+  - notePosInBeats: 46.9219
+    keyOfThisNote: 101
+    displayText: 
+    showNote: 1
+    isInput: 1
+  - notePosInBeats: 49
+    keyOfThisNote: 45
+    displayText: Wooooaaaahh~
+    showNote: 0
+    isInput: 0
+  - notePosInBeats: 52
+    keyOfThisNote: 45
+    displayText: "(Gah, talk about fast food\u2026 you\u2019re alright, they just
+      put you on the spot.)"
+    showNote: 0
+    isInput: 0
+  - notePosInBeats: 54
+    keyOfThisNote: 45
+    displayText: (You practiced for this. Just take a deep breath, and refocus.)
+    showNote: 0
+    isInput: 0
+  - notePosInBeats: 56
+    keyOfThisNote: 45
+    displayText: "(In for 4, out for 4. There you go. You\u2019re alright.)"
+    showNote: 0
+    isInput: 0
+  - notePosInBeats: 61
+    keyOfThisNote: 45
+    displayText: (Whenever things get to be too much, you just gotta remember-)
+    showNote: 0
+    isInput: 0
+  - notePosInBeats: 63
+    keyOfThisNote: 45
+    displayText: "\r(Taking a moment to breathe is always a smart decision.)"
+    showNote: 0
+    isInput: 0
+  - notePosInBeats: 65
+    keyOfThisNote: 45
+    displayText: "(Alright, we\u2019ve got this. One more time, from the top!)"
+    showNote: 0
+    isInput: 0
+  - notePosInBeats: 67.25
+    keyOfThisNote: 45
+    displayText: What
+    showNote: 1
+    isInput: 0
+  - notePosInBeats: 67.5
+    keyOfThisNote: 45
+    displayText: What can
+    showNote: 1
+    isInput: 0
+  - notePosInBeats: 67.875
+    keyOfThisNote: 45
+    displayText: What can I
+    showNote: 1
+    isInput: 0
+  - notePosInBeats: 68
+    keyOfThisNote: 45
+    displayText: What can I get
+    showNote: 1
+    isInput: 0
+  - notePosInBeats: 68.25
+    keyOfThisNote: 45
+    displayText: What can I get for
+    showNote: 1
+    isInput: 0
+  - notePosInBeats: 68.375
+    keyOfThisNote: 45
+    displayText: What can I get for you
+    showNote: 1
+    isInput: 0
+  - notePosInBeats: 68.625
+    keyOfThisNote: 45
+    displayText: What can I get for you to
+    showNote: 1
+    isInput: 0
+  - notePosInBeats: 68.75
+    keyOfThisNote: 45
+    displayText: What can I get for you today?
+    showNote: 1
+    isInput: 0
+  - notePosInBeats: 69.25
+    keyOfThisNote: 102
+    displayText: 
+    showNote: 1
+    isInput: 1
+  - notePosInBeats: 69.5
+    keyOfThisNote: 111
+    displayText: 
+    showNote: 1
+    isInput: 1
+  - notePosInBeats: 69.75
+    keyOfThisNote: 117
+    displayText: 
+    showNote: 1
+    isInput: 1
+  - notePosInBeats: 70
+    keyOfThisNote: 114
+    displayText: 
+    showNote: 1
+    isInput: 1
+  - notePosInBeats: 70.25
+    keyOfThisNote: 116
+    displayText: 
+    showNote: 1
+    isInput: 1
+  - notePosInBeats: 70.375
+    keyOfThisNote: 101
+    displayText: 
+    showNote: 1
+    isInput: 1
+  - notePosInBeats: 70.625
+    keyOfThisNote: 101
+    displayText: 
+    showNote: 1
+    isInput: 1
+  - notePosInBeats: 70.75
+    keyOfThisNote: 110
+    displayText: 
+    showNote: 1
+    isInput: 1
+  - notePosInBeats: 71.25
+    keyOfThisNote: 45
+    displayText: And
+    showNote: 1
+    isInput: 0
+  - notePosInBeats: 71.5
+    keyOfThisNote: 45
+    displayText: And for
+    showNote: 1
+    isInput: 0
+  - notePosInBeats: 71.75
+    keyOfThisNote: 45
+    displayText: And for your
+    showNote: 1
+    isInput: 0
+  - notePosInBeats: 72
+    keyOfThisNote: 45
+    displayText: And for your drink?
+    showNote: 1
+    isInput: 0
+  - notePosInBeats: 72.25
+    keyOfThisNote: 99
+    displayText: 
+    showNote: 1
+    isInput: 1
+  - notePosInBeats: 72.5
+    keyOfThisNote: 111
+    displayText: 
+    showNote: 1
+    isInput: 1
+  - notePosInBeats: 72.75
+    keyOfThisNote: 108
+    displayText: 
+    showNote: 1
+    isInput: 1
+  - notePosInBeats: 73
+    keyOfThisNote: 97
+    displayText: 
+    showNote: 1
+    isInput: 1
+  - notePosInBeats: 75.5
+    keyOfThisNote: 45
+    displayText: What
+    showNote: 1
+    isInput: 0
+  - notePosInBeats: 75.75
+    keyOfThisNote: 45
+    displayText: What size
+    showNote: 1
+    isInput: 0
+  - notePosInBeats: 76
+    keyOfThisNote: 45
+    displayText: What size drink
+    showNote: 1
+    isInput: 0
+  - notePosInBeats: 76.25
+    keyOfThisNote: 45
+    displayText: What size drink do
+    showNote: 1
+    isInput: 0
+  - notePosInBeats: 76.75
+    keyOfThisNote: 45
+    displayText: What size drink do you
+    showNote: 1
+    isInput: 0
+  - notePosInBeats: 77
+    keyOfThisNote: 45
+    displayText: What size drink do you want?
+    showNote: 1
+    isInput: 0
+  - notePosInBeats: 77.5
+    keyOfThisNote: 109
+    displayText: 
+    showNote: 1
+    isInput: 1
+  - notePosInBeats: 77.75
+    keyOfThisNote: 101
+    displayText: 
+    showNote: 1
+    isInput: 1
+  - notePosInBeats: 78
+    keyOfThisNote: 100
+    displayText: 
+    showNote: 1
+    isInput: 1
+  - notePosInBeats: 78.25
+    keyOfThisNote: 105
+    displayText: 
+    showNote: 1
+    isInput: 1
+  - notePosInBeats: 78.75
+    keyOfThisNote: 117
+    displayText: 
+    showNote: 1
+    isInput: 1
+  - notePosInBeats: 79
+    keyOfThisNote: 109
+    displayText: 
+    showNote: 1
+    isInput: 1
+  - notePosInBeats: 79.5
+    keyOfThisNote: 45
+    displayText: Do
+    showNote: 1
+    isInput: 0
+  - notePosInBeats: 79.75
+    keyOfThisNote: 45
+    displayText: Do you
+    showNote: 1
+    isInput: 0
+  - notePosInBeats: 80
+    keyOfThisNote: 45
+    displayText: Do you want
+    showNote: 1
+    isInput: 0
+  - notePosInBeats: 80.25
+    keyOfThisNote: 45
+    displayText: Do you want fries
+    showNote: 1
+    isInput: 0
+  - notePosInBeats: 80.75
+    keyOfThisNote: 45
+    displayText: Do you want fries with
+    showNote: 1
+    isInput: 0
+  - notePosInBeats: 81
+    keyOfThisNote: 45
+    displayText: Do you want fries with that?
+    showNote: 1
+    isInput: 0
+  - notePosInBeats: 81.5
+    keyOfThisNote: 112
+    displayText: 
+    showNote: 1
+    isInput: 1
+  - notePosInBeats: 81.75
+    keyOfThisNote: 108
+    displayText: 
+    showNote: 1
+    isInput: 1
+  - notePosInBeats: 82
+    keyOfThisNote: 101
+    displayText: 
+    showNote: 1
+    isInput: 1
+  - notePosInBeats: 82.25
+    keyOfThisNote: 97
+    displayText: 
+    showNote: 1
+    isInput: 1
+  - notePosInBeats: 82.75
+    keyOfThisNote: 115
+    displayText: 
+    showNote: 1
+    isInput: 1
+  - notePosInBeats: 83
+    keyOfThisNote: 101
+    displayText: 
+    showNote: 1
+    isInput: 1
+  - notePosInBeats: 83.25
+    keyOfThisNote: 45
+    displayText: An
+    showNote: 1
+    isInput: 0
+  - notePosInBeats: 83.5
+    keyOfThisNote: 45
+    displayText: Any
+    showNote: 1
+    isInput: 0
+  - notePosInBeats: 83.75
+    keyOfThisNote: 45
+    displayText: Any thing
+    showNote: 1
+    isInput: 0
+  - notePosInBeats: 84
+    keyOfThisNote: 45
+    displayText: Any thing else?
+    showNote: 1
+    isInput: 0
+  - notePosInBeats: 84.25
+    keyOfThisNote: 110
+    displayText: 
+    showNote: 1
+    isInput: 1
+  - notePosInBeats: 84.5
+    keyOfThisNote: 111
+    displayText: 
+    showNote: 1
+    isInput: 1
+  - notePosInBeats: 84.75
+    keyOfThisNote: 112
+    displayText: 
+    showNote: 1
+    isInput: 1
+  - notePosInBeats: 85
+    keyOfThisNote: 101
+    displayText: 
+    showNote: 1
+    isInput: 1
+  - notePosInBeats: 85.75
+    keyOfThisNote: 45
+    displayText: To
+    showNote: 1
+    isInput: 0
+  - notePosInBeats: 85.6667
+    keyOfThisNote: 45
+    displayText: Total
+    showNote: 1
+    isInput: 0
+  - notePosInBeats: 85.8333
+    keyOfThisNote: 45
+    displayText: Total is
+    showNote: 1
+    isInput: 0
+  - notePosInBeats: 86
+    keyOfThisNote: 45
+    displayText: Total is six
+    showNote: 1
+    isInput: 0
+  - notePosInBeats: 86.1667
+    keyOfThisNote: 45
+    displayText: Total is six twen
+    showNote: 1
+    isInput: 0
+  - notePosInBeats: 86.3333
+    keyOfThisNote: 45
+    displayText: Total is six twenty
+    showNote: 1
+    isInput: 0
+  - notePosInBeats: 86.5
+    keyOfThisNote: 45
+    displayText: Total is six twenty cash
+    showNote: 1
+    isInput: 0
+  - notePosInBeats: 86.6667
+    keyOfThisNote: 45
+    displayText: Total is six twenty cash or
+    showNote: 1
+    isInput: 0
+  - notePosInBeats: 86.8333
+    keyOfThisNote: 45
+    displayText: Total is six twenty cash or card?
+    showNote: 1
+    isInput: 0
+  - notePosInBeats: 87.5
+    keyOfThisNote: 100
+    displayText: 
+    showNote: 1
+    isInput: 1
+  - notePosInBeats: 87.6667
+    keyOfThisNote: 101
+    displayText: 
+    showNote: 1
+    isInput: 1
+  - notePosInBeats: 87.8333
+    keyOfThisNote: 98
+    displayText: 
+    showNote: 1
+    isInput: 1
+  - notePosInBeats: 88
+    keyOfThisNote: 105
+    displayText: 
+    showNote: 1
+    isInput: 1
+  - notePosInBeats: 88.1667
+    keyOfThisNote: 116
+    displayText: 
+    showNote: 1
+    isInput: 1
+  - notePosInBeats: 88.3333
+    keyOfThisNote: 99
+    displayText: 
+    showNote: 1
+    isInput: 1
+  - notePosInBeats: 88.5
+    keyOfThisNote: 97
+    displayText: 
+    showNote: 1
+    isInput: 1
+  - notePosInBeats: 88.6667
+    keyOfThisNote: 114
+    displayText: 
+    showNote: 1
+    isInput: 1
+  - notePosInBeats: 88.8333
+    keyOfThisNote: 100
+    displayText: 
+    showNote: 1
+    isInput: 1
+  - notePosInBeats: 91
+    keyOfThisNote: 45
+    displayText: "You\u2019re order number 25! We\u2019ll call you up when it\u2019s
+      ready."
+    showNote: 0
+    isInput: 0
+  - notePosInBeats: 93
+    keyOfThisNote: 45
+    displayText: (See? You nailed it! Ordered like a pro. The number 14!)
+    showNote: 0
+    isInput: 0
+  - notePosInBeats: 95
+    keyOfThisNote: 45
+    displayText: "(Even though it felt silly to get overwhelmed by this\u2026)"
+    showNote: 0
+    isInput: 0
+  - notePosInBeats: 97
+    keyOfThisNote: 45
+    displayText: "(... It\u2019s not like this is the calmest of environments, either.)"
+    showNote: 0
+    isInput: 0
+  - notePosInBeats: 99
+    keyOfThisNote: 45
+    displayText: "(Taking a moment didn\u2019t waste anyone\u2019s time-)"
+    showNote: 0
+    isInput: 0
+  - notePosInBeats: 101
+    keyOfThisNote: 45
+    displayText: "(And no one\u2019s judging you for your choice in sandwich!)"
+    showNote: 0
+    isInput: 0
+  - notePosInBeats: 103
+    keyOfThisNote: 45
+    displayText: "(You\u2019re fine. You\u2019re doing just fine.)"
+    showNote: 0
+    isInput: 0
+  - notePosInBeats: 105
+    keyOfThisNote: 45
+    displayText: "(In for 4\u2026 Out for 4. You\u2019re gonna be alright.)"
+    showNote: 0
+    isInput: 0
+  - notePosInBeats: 107
+    keyOfThisNote: 45
+    displayText: "(Heck, you\u2019re gonna be better than alright soon!)"
+    showNote: 0
+    isInput: 0
+  - notePosInBeats: 109
+    keyOfThisNote: 45
+    displayText: (Cause soon, you get to eat a grilled cheese~!)
+    showNote: 0
+    isInput: 0
+  - notePosInBeats: 111
+    keyOfThisNote: 45
+    displayText: (Oh, number 14. You never fail to get me smiling.)
+    showNote: 0
+    isInput: 0
