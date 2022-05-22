@@ -120,8 +120,8 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 0
-        y: 1723
-        width: 222
+        y: 699
+        width: 219
         height: 325
       alignment: 7
       pivot: {x: 0.5, y: 0}
@@ -140,9 +140,9 @@ TextureImporter:
       name: MC_NEUTRAL_NOT_TALK_1
       rect:
         serializedVersion: 2
-        x: 222
-        y: 1723
-        width: 222
+        x: 225
+        y: 699
+        width: 219
         height: 325
       alignment: 7
       pivot: {x: 0.5, y: 0}
@@ -161,9 +161,9 @@ TextureImporter:
       name: MC_NEUTRAL_NOT_TALK_2
       rect:
         serializedVersion: 2
-        x: 444
-        y: 1723
-        width: 222
+        x: 450
+        y: 699
+        width: 219
         height: 325
       alignment: 7
       pivot: {x: 0.5, y: 0}
@@ -182,9 +182,9 @@ TextureImporter:
       name: MC_NEUTRAL_NOT_TALK_3
       rect:
         serializedVersion: 2
-        x: 666
-        y: 1723
-        width: 222
+        x: 675
+        y: 699
+        width: 219
         height: 325
       alignment: 7
       pivot: {x: 0.5, y: 0}
@@ -203,9 +203,9 @@ TextureImporter:
       name: MC_NEUTRAL_NOT_TALK_4
       rect:
         serializedVersion: 2
-        x: 888
-        y: 1723
-        width: 222
+        x: 900
+        y: 699
+        width: 219
         height: 325
       alignment: 7
       pivot: {x: 0.5, y: 0}
@@ -224,9 +224,9 @@ TextureImporter:
       name: MC_NEUTRAL_NOT_TALK_8
       rect:
         serializedVersion: 2
-        x: 2689
-        y: 1723
-        width: 222
+        x: 1800
+        y: 699
+        width: 219
         height: 325
       alignment: 7
       pivot: {x: 0.5, y: 0}
@@ -245,9 +245,9 @@ TextureImporter:
       name: MC_NEUTRAL_NOT_TALK_9
       rect:
         serializedVersion: 2
-        x: 2912
-        y: 1723
-        width: 222
+        x: 0
+        y: 368
+        width: 219
         height: 325
       alignment: 7
       pivot: {x: 0.5, y: 0}
@@ -266,9 +266,9 @@ TextureImporter:
       name: MC_NEUTRAL_NOT_TALK_10
       rect:
         serializedVersion: 2
-        x: 3136
-        y: 1723
-        width: 222
+        x: 225
+        y: 368
+        width: 219
         height: 325
       alignment: 7
       pivot: {x: 0.5, y: 0}
@@ -287,9 +287,9 @@ TextureImporter:
       name: MC_NEUTRAL_NOT_TALK_7
       rect:
         serializedVersion: 2
-        x: 2467
-        y: 1723
-        width: 222
+        x: 1575
+        y: 699
+        width: 219
         height: 325
       alignment: 7
       pivot: {x: 0.5, y: 0}
@@ -305,12 +305,12 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: MC_NEUTRAL_NOT_TALK_33
+      name: MC_NEUTRAL_NOT_TALK_5
       rect:
         serializedVersion: 2
-        x: 0
-        y: 976
-        width: 222
+        x: 1125
+        y: 699
+        width: 219
         height: 325
       alignment: 7
       pivot: {x: 0.5, y: 0}
@@ -319,19 +319,19 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 9197541e480c346719d00a6b690d452d
-      internalID: -238869446
+      spriteID: 5e60439608ab34cf8a3b426940addfe3
+      internalID: 2124521862
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: MC_NEUTRAL_NOT_TALK_34
+      name: MC_NEUTRAL_NOT_TALK_6
       rect:
         serializedVersion: 2
-        x: 220
-        y: 976
-        width: 222
+        x: 1350
+        y: 699
+        width: 219
         height: 325
       alignment: 7
       pivot: {x: 0.5, y: 0}
@@ -340,19 +340,19 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 7bb16b650346e4b10aa6d22e1a3bfc1c
-      internalID: 417157170
+      spriteID: 0c8dfa5219238437199c95dc2b977fb4
+      internalID: -1539985981
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: MC_NEUTRAL_NOT_TALK_35
+      name: MC_NEUTRAL_NOT_TALK_11
       rect:
         serializedVersion: 2
-        x: 441
-        y: 976
-        width: 222
+        x: 450
+        y: 368
+        width: 219
         height: 325
       alignment: 7
       pivot: {x: 0.5, y: 0}
@@ -361,19 +361,19 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: f602ba2fbc0b74210809fd0c4867b8f8
-      internalID: 865681452
+      spriteID: 386a625175bde4cb6aa71820d93e3916
+      internalID: -1491194195
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: MC_NEUTRAL_NOT_TALK_36
+      name: MC_NEUTRAL_NOT_TALK_12
       rect:
         serializedVersion: 2
-        x: 668
-        y: 976
-        width: 222
+        x: 675
+        y: 368
+        width: 219
         height: 325
       alignment: 7
       pivot: {x: 0.5, y: 0}
@@ -382,19 +382,19 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 3c598adea488545e595913ba00246cce
-      internalID: -86209108
+      spriteID: 017a6a33ec9b848719ab0e56b7bdcaa6
+      internalID: -1194150004
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: MC_NEUTRAL_NOT_TALK_37
+      name: MC_NEUTRAL_NOT_TALK_13
       rect:
         serializedVersion: 2
-        x: 893
-        y: 976
-        width: 222
+        x: 900
+        y: 368
+        width: 219
         height: 325
       alignment: 7
       pivot: {x: 0.5, y: 0}
@@ -403,8 +403,29 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 7c9163ee735b04f4bbe8158502403037
-      internalID: 887903995
+      spriteID: fa2a4fc8780e24d3a8288d288eb89d99
+      internalID: 560687214
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MC_NEUTRAL_NOT_TALK_14
+      rect:
+        serializedVersion: 2
+        x: 1125
+        y: 368
+        width: 219
+        height: 325
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c51435b5ff24748ca9917b30acaf5f8c
+      internalID: 1971027170
       vertices: []
       indices: 
       edges: []
@@ -422,45 +443,17 @@ TextureImporter:
     nameFileIdTable:
       MC_NEUTRAL_NOT_TALK_2: 1209877881
       MC_NEUTRAL_NOT_TALK_14: 1971027170
-      MC_NEUTRAL_NOT_TALK_17: 256767511
-      MC_NEUTRAL_NOT_TALK_19: 295437637
-      MC_NEUTRAL_NOT_TALK_34: 417157170
-      MC_NEUTRAL_NOT_TALK_28: -1158120817
-      MC_NEUTRAL_NOT_TALK_29: 1816738176
-      MC_NEUTRAL_NOT_TALK_30: -1085303260
-      MC_NEUTRAL_NOT_TALK_38: 1541951334
-      MC_NEUTRAL_NOT_TALK_1: -403186262
-      MC_NEUTRAL_NOT_TALK_11: -1491194195
-      MC_NEUTRAL_NOT_TALK_36: -86209108
-      MC_NEUTRAL_NOT_TALK_27: 1509407813
-      MC_NEUTRAL_NOT_TALK_18: -264594104
-      MC_NEUTRAL_NOT_TALK_9: -784050329
-      MC_NEUTRAL_NOT_TALK_23: 584141664
-      MC_NEUTRAL_NOT_TALK_25: 1371555062
-      MC_NEUTRAL_NOT_TALK_10: 1209292024
-      MC_NEUTRAL_NOT_TALK_20: -208509727
-      MC_NEUTRAL_NOT_TALK_16: -1281112615
-      MC_NEUTRAL_NOT_TALK_4: 1903741703
-      MC_NEUTRAL_NOT_TALK_35: 865681452
-      MC_NEUTRAL_NOT_TALK_41: -505792673
-      MC_NEUTRAL_NOT_TALK_22: -2032082348
       MC_NEUTRAL_NOT_TALK_7: -541861647
       MC_NEUTRAL_NOT_TALK_12: -1194150004
-      MC_NEUTRAL_NOT_TALK_42: 1223133341
       MC_NEUTRAL_NOT_TALK_6: -1539985981
-      MC_NEUTRAL_NOT_TALK_31: 1960544377
-      MC_NEUTRAL_NOT_TALK_26: 1824479137
-      MC_NEUTRAL_NOT_TALK_15: 626694908
-      MC_NEUTRAL_NOT_TALK_33: -238869446
-      MC_NEUTRAL_NOT_TALK_32: 1800125906
-      MC_NEUTRAL_NOT_TALK_40: -1367013875
+      MC_NEUTRAL_NOT_TALK_1: -403186262
+      MC_NEUTRAL_NOT_TALK_11: -1491194195
+      MC_NEUTRAL_NOT_TALK_9: -784050329
       MC_NEUTRAL_NOT_TALK_8: -1799994001
       MC_NEUTRAL_NOT_TALK_0: 793423690
-      MC_NEUTRAL_NOT_TALK_24: 1841309352
+      MC_NEUTRAL_NOT_TALK_10: 1209292024
       MC_NEUTRAL_NOT_TALK_3: -335983130
-      MC_NEUTRAL_NOT_TALK_21: -1210155452
-      MC_NEUTRAL_NOT_TALK_39: 744964789
-      MC_NEUTRAL_NOT_TALK_37: 887903995
+      MC_NEUTRAL_NOT_TALK_4: 1903741703
       MC_NEUTRAL_NOT_TALK_13: 560687214
       MC_NEUTRAL_NOT_TALK_5: 2124521862
   spritePackingTag: 

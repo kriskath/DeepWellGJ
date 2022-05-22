@@ -1413,6 +1413,18 @@ PrefabInstance:
       propertyPath: m_LocalPosition.y
       value: 1.09
       objectReference: {fileID: 0}
+    - target: {fileID: 2931167702309907264, guid: 2ef3217066a9e49369e23099da97d79f, type: 3}
+      propertyPath: m_Size.x
+      value: 2.19
+      objectReference: {fileID: 0}
+    - target: {fileID: 2931167702309907264, guid: 2ef3217066a9e49369e23099da97d79f, type: 3}
+      propertyPath: m_Size.y
+      value: 3.25
+      objectReference: {fileID: 0}
+    - target: {fileID: 2931167702309907264, guid: 2ef3217066a9e49369e23099da97d79f, type: 3}
+      propertyPath: m_WasSpriteAssigned
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 2931167702309907267, guid: 2ef3217066a9e49369e23099da97d79f, type: 3}
       propertyPath: m_RootOrder
       value: 8

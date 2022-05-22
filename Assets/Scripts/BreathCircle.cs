@@ -13,6 +13,11 @@ public class BreathCircle : MonoBehaviour
         animator = GetComponent<Animator>();
     }
 
+    private void Start()
+    {
+        inBreathWindow = false;
+    }
+
     public void PlayBreathAnimation(bool play)
     {
         if (play)

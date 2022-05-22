@@ -116,13 +116,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: MC_CONCCERNED_TALK_0
+      name: MC_CONCERNED_TALK_0
       rect:
         serializedVersion: 2
-        x: 28
-        y: 37
-        width: 321
-        height: 406
+        x: 0
+        y: 174
+        width: 305
+        height: 338
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -130,8 +130,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 2b36b107e74b44c0a8d0b286a624c7b2
-      internalID: 1473924092
+      spriteID: db29ebf61602a4608bfabe6153704830
+      internalID: -276495083
       vertices: []
       indices: 
       edges: []
@@ -147,8 +147,7 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      MC_CONCCERNED_TALK_0: 1473924092
-      MC_CONCCERNED_TALK_1: -559281697
+      MC_CONCERNED_TALK_0: -276495083
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0

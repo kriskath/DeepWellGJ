@@ -120,9 +120,9 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 0
-        y: 681
+        y: 680
         width: 283
-        height: 343
+        height: 344
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -140,10 +140,10 @@ TextureImporter:
       name: MC_BREATHING_1
       rect:
         serializedVersion: 2
-        x: 283
-        y: 681
+        x: 289
+        y: 680
         width: 283
-        height: 343
+        height: 344
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -161,10 +161,10 @@ TextureImporter:
       name: MC_BREATHING_2
       rect:
         serializedVersion: 2
-        x: 566
-        y: 681
+        x: 578
+        y: 680
         width: 283
-        height: 343
+        height: 344
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -182,10 +182,10 @@ TextureImporter:
       name: MC_BREATHING_3
       rect:
         serializedVersion: 2
-        x: 849
-        y: 681
+        x: 867
+        y: 680
         width: 283
-        height: 343
+        height: 344
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -203,10 +203,10 @@ TextureImporter:
       name: MC_BREATHING_4
       rect:
         serializedVersion: 2
-        x: 1132
-        y: 681
+        x: 1156
+        y: 680
         width: 283
-        height: 343
+        height: 344
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -224,10 +224,10 @@ TextureImporter:
       name: MC_BREATHING_5
       rect:
         serializedVersion: 2
-        x: 1415
-        y: 681
+        x: 1445
+        y: 680
         width: 283
-        height: 343
+        height: 344
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -245,10 +245,10 @@ TextureImporter:
       name: MC_BREATHING_6
       rect:
         serializedVersion: 2
-        x: 1698
-        y: 681
+        x: 1734
+        y: 680
         width: 283
-        height: 343
+        height: 344
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -267,9 +267,9 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 0
-        y: 338
+        y: 330
         width: 283
-        height: 343
+        height: 344
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -287,10 +287,10 @@ TextureImporter:
       name: MC_BREATHING_8
       rect:
         serializedVersion: 2
-        x: 283
-        y: 338
+        x: 289
+        y: 330
         width: 283
-        height: 343
+        height: 344
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -308,10 +308,10 @@ TextureImporter:
       name: MC_BREATHING_9
       rect:
         serializedVersion: 2
-        x: 566
-        y: 338
+        x: 578
+        y: 330
         width: 283
-        height: 343
+        height: 344
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
