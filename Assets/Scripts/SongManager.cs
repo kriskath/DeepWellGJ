@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using TMPro;
 
 //Notes / TODO:
 // Have the Level Manager determine current song to play. Level Manager tells Song Manager which level it is. Song Manager should determine which song to play
@@ -29,22 +30,40 @@ public class SongManager : MonoBehaviour
     [SerializeField]
     private TextDisplay textDisplay;
     
+
     [Space]
+
 
     [Tooltip("The list of songs to play")]
     [SerializeField]
     private List<Song> songs = new List<Song>();
 
+
     [Space]
-    [Header("Sprite Containers")]
+
+
+    [Header("UI Elements")]
+
+    [Tooltip("Alphabet to display on game notes.")]
+    [SerializeField]
+    private List<Sprite> alphabet = new List<Sprite>();
+
+    [SerializeField]
+    private Sprite playerSpeechBubble;
+    [SerializeField]
+    private Sprite npcSpeechBubble;
+
+    [SerializeField]
+    private GameObject pauseMenu;
+
+    [SerializeField]
+    private GameObject countdownDisplay;
 
     [Tooltip("Default sprite display")]
     [SerializeField]
     private Sprite defaultSprite;
 
-    [Tooltip("Alphabet to display on game notes.")]
-    [SerializeField]
-    private List<Sprite> alphabet = new List<Sprite>();
+
 
 
     private Song currentSong = null;
@@ -70,10 +89,7 @@ public class SongManager : MonoBehaviour
 
     // change speech bubble tail based on who is talking
     private SpriteRenderer speechRenderer;
-    [SerializeField]
-    private Sprite playerSpeechBubble;
-    [SerializeField]
-    private Sprite npcSpeechBubble;
+
 
     private void Awake()
     {
@@ -98,9 +114,14 @@ public class SongManager : MonoBehaviour
         audioSource.clip = currentSong.song;
 
         // Bind pausing music to OnGamePaused
-        InputSystem.OnGamePaused += PauseMusic;
+        InputSystem.OnGamePaused += TogglePause;
 
         speechRenderer = GameObject.Find("MusicDisplay").transform.Find("MusicBar").gameObject.GetComponent<SpriteRenderer>();
+    }
+
+    private void OnDisable()
+    {
+        InputSystem.OnGamePaused -= TogglePause;
     }
 
     void Start()
@@ -214,13 +235,14 @@ public class SongManager : MonoBehaviour
         // Disable input while counting down
         FindObjectOfType<PlayerInput>().actions.Disable();
 
-        for (int i = 0; i < numSeconds; i++)
+        countdownDisplay.SetActive(true);
+        for (int i = numSeconds; i > 0; i--)
         {
-            print(i+1);
+            countdownDisplay.GetComponent<TMP_Text>().SetText(i.ToString());
             yield return new WaitForSeconds(1f);
         }
 
-        print("Go!");
+        countdownDisplay.SetActive(false);
 
         // Enable input
         FindObjectOfType<PlayerInput>().actions.Enable();
@@ -247,15 +269,17 @@ public class SongManager : MonoBehaviour
         }
     }
 
-    private void PauseMusic()
+    private void TogglePause()
     {
         // Toggle between play/pause
         if (audioSource.isPlaying)
         {
             audioSource.Pause();
+            pauseMenu.SetActive(true);
         }
         else
         {
+            pauseMenu.SetActive(false);
             IEnumerator startCoroutine = StartMusicWithDelay(3);
             // Start music
             StartCoroutine(startCoroutine);
