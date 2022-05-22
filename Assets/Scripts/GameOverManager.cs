@@ -3,27 +3,30 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
+
 public class GameOverManager : MonoBehaviour
 {
     [SerializeField] int mainMenuSceneNumber = 0;
 
     public void QuitGame()
     {
-        if (Time.timeScale <= 0 || SongManager.Instance.IsPaused) 
-        { SongManager.Instance.ToggleScaleAndPauseVar(false); }
+        LoadLevel(mainMenuSceneNumber);
 
-        SceneManager.UnloadSceneAsync(SceneManager.GetActiveScene().buildIndex);
-        Resources.UnloadUnusedAssets();
-        SceneManager.LoadScene(mainMenuSceneNumber, LoadSceneMode.Single);
     }
 
     public void RetryLevel()
+    {
+        LoadLevel(SceneManager.GetActiveScene().buildIndex);
+    }
+
+
+    private void LoadLevel(int sceneNumber)
     {
         if (Time.timeScale <= 0 || SongManager.Instance.IsPaused)
         { SongManager.Instance.ToggleScaleAndPauseVar(false); }
 
         SceneManager.UnloadSceneAsync(SceneManager.GetActiveScene().buildIndex);
         Resources.UnloadUnusedAssets();
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex, LoadSceneMode.Single);
+        SceneManager.LoadScene(sceneNumber, LoadSceneMode.Single);
     }
 }

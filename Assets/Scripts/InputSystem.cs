@@ -32,6 +32,8 @@ public class InputSystem : MonoBehaviour
     // animate hitting of note
     private Animator musicHitAnimator;
 
+    private bool isInputAcive;
+
     private void Awake()
     {
         // If there is an instance, and it's not me, delete myself.
@@ -69,6 +71,10 @@ public class InputSystem : MonoBehaviour
 
         // get animator component of music hit radius gameobject
         musicHitAnimator = GameObject.Find("MusicDisplay").transform.Find("MusicHitRadius").gameObject.GetComponent<Animator>();
+
+        isInputAcive = true;
+
+        StressManager.OnGameOver += GameOver;
     }
 
     private void OnDisable()
@@ -77,13 +83,14 @@ public class InputSystem : MonoBehaviour
         breatheAction.performed -= OnBreathStopped;
         pauseAction.performed -= OnPause;
         Keyboard.current.onTextInput -= HitNote;
+        StressManager.OnGameOver -= GameOver;
     }
 
     private void HitNote(char keyPressed)  
     {
         // Ignore breath and pause and while counting down
         if (
-            breatheAction.phase == InputActionPhase.Started || 
+            breatheAction.phase == InputActionPhase.Started || !isInputAcive ||
             pauseAction.triggered || SongManager.Instance.IsPaused || 
             !GetComponent<PlayerInput>().actions.enabled) {
             return;
@@ -125,9 +132,7 @@ public class InputSystem : MonoBehaviour
     public void DestroyNote(GameObject gameNote, bool isHit) 
     {
         gameNote.gameObject.SetActive(false);
-        // Invoke event, pass true for hit
         OnNoteDestroyed?.Invoke(isHit);
-        // Event subscribers will play sound effects, trigger animation, etc
 
         if (isHit) 
         {
@@ -141,30 +146,19 @@ public class InputSystem : MonoBehaviour
 
     public void OnBreathStarted(InputAction.CallbackContext context)
     {
-        if (SongManager.Instance.IsPaused) { return; }
+        if (SongManager.Instance.IsPaused || !isInputAcive) { return; }
 
         breathCircle.PlayBreathAnimation(true);
     }
 
     public void OnBreathStopped(InputAction.CallbackContext context) 
     {
-        if (SongManager.Instance.IsPaused) { return; }
+        if (SongManager.Instance.IsPaused || !isInputAcive) { return; }
 
         // Might want to have a OnSongChanged event so we only need to get secondsperbeat once
         float breatheDurationInBeats = (float) context.duration / SongManager.Instance.SecondsPerBeat;
-        Debug.Log("Breathed for " + breatheDurationInBeats + " beats");
 
-        // // If breath too short or long
-        // if (breatheDurationInBeats < StressManager.Instance.MinBreathTimeInBeats || 
-        //     breatheDurationInBeats > StressManager.Instance.MaxBreathTimeInBeats) {
-        //     StressManager.Instance.AddStress(false);
-        //     Debug.Log("Failed breath");
-        // }
-        // // If breathe long enough
-        // else { 
-        //     StressManager.Instance.RemoveStress();
-        //     Debug.Log("Successful breath");
-        // }
+        Debug.Log("Breathed for " + breatheDurationInBeats + " beats");
 
         breathCircle.PlayBreathAnimation(false);
         if (breathCircle.CheckBreathSuccess())
@@ -187,5 +181,10 @@ public class InputSystem : MonoBehaviour
     public void TogglePause()
     {
         OnGamePaused?.Invoke();
+    }
+
+    private void GameOver()
+    {
+        isInputAcive = false;
     }
 }

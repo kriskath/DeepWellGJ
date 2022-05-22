@@ -14,10 +14,14 @@ public class PlayerController : MonoBehaviour
     //breathe action bound in Input System
     private InputAction breatheAction;
 
+    private bool isAnimActive;
+
     private void Awake()
     {
         animator = GetComponent<Animator>();
         Keyboard.current.onTextInput += KeyHit;
+
+        isAnimActive = true; 
 
         // Get current input map
         InputActionMap inputActions = GameObject.FindObjectOfType<PlayerInput>().currentActionMap;
@@ -26,6 +30,8 @@ public class PlayerController : MonoBehaviour
         breatheAction = inputActions.FindAction("Breathe");
         breatheAction.started += StartBreatheAnim;
         breatheAction.performed += StopBreatheAnim;
+
+        StressManager.OnGameOver += GameOver;
     }
 
     private void OnDisable()
@@ -33,6 +39,7 @@ public class PlayerController : MonoBehaviour
         Keyboard.current.onTextInput -= KeyHit;
         breatheAction.started -= StartBreatheAnim;
         breatheAction.performed -= StopBreatheAnim;
+        StressManager.OnGameOver -= GameOver;
     }
 
     // Update is called once per frame
@@ -44,7 +51,7 @@ public class PlayerController : MonoBehaviour
     private void KeyHit(char key)
     {
         // Ignore non-alphabet characters 
-        if (!Char.IsLetter(key) || SongManager.Instance.IsPaused) { return; }
+        if (!Char.IsLetter(key) || SongManager.Instance.IsPaused || !isAnimActive) { return; }
 
         // foreach (AnimatorControllerParameter p in animator.parameters)
         //     if (p.type == AnimatorControllerParameterType.Trigger)
@@ -68,7 +75,7 @@ public class PlayerController : MonoBehaviour
 
     public void StartBreatheAnim(InputAction.CallbackContext context)
     {
-        if (SongManager.Instance.IsPaused) { return; }
+        if (SongManager.Instance.IsPaused || !isAnimActive) { return; }
 
         animator.SetTrigger("BreathStarted");
     }
@@ -77,5 +84,10 @@ public class PlayerController : MonoBehaviour
     {
 
         animator.SetTrigger("BreathStopped");
+    }
+
+    private void GameOver()
+    {
+        isAnimActive = false;
     }
 }
