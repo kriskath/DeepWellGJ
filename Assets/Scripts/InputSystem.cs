@@ -31,6 +31,9 @@ public class InputSystem : MonoBehaviour
     //pause action bound in Input System
     private InputAction pauseAction;
 
+    // animate hitting of note
+    private Animator musicHitAnimator;
+
     private void Awake()
     {
         // If there is an instance, and it's not me, delete myself.
@@ -65,6 +68,9 @@ public class InputSystem : MonoBehaviour
         // Map OnPause to input
         pauseAction = inputActions.FindAction("Pause");
         pauseAction.performed += OnPause;
+
+        // get animator component of music hit radius gameobject
+        musicHitAnimator = GameObject.Find("MusicDisplay").transform.Find("MusicHitRadius").gameObject.GetComponent<Animator>();
     }
 
     private void HitNote(char keyPressed)  
@@ -82,6 +88,8 @@ public class InputSystem : MonoBehaviour
         List<Collider2D> overlapNotes = new List<Collider2D>();
 
         MusicDisplay.Instance.MusicHitRadius.OverlapCollider(contactFilter, overlapNotes);
+
+        musicHitAnimator.SetTrigger("hit");
         
         // If list is empty, pressed when no notes
         if (overlapNotes.Count == 0) {
