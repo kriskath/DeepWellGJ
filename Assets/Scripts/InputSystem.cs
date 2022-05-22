@@ -4,8 +4,6 @@ using UnityEngine;
 using System;
 using UnityEngine.InputSystem;
 
-//TODO:
-    // Read in user inputs and display them in text box
 public class InputSystem : MonoBehaviour
 {
     [Tooltip("Text Display system for the song script.")]
@@ -71,6 +69,14 @@ public class InputSystem : MonoBehaviour
 
         // get animator component of music hit radius gameobject
         musicHitAnimator = GameObject.Find("MusicDisplay").transform.Find("MusicHitRadius").gameObject.GetComponent<Animator>();
+    }
+
+    private void OnDisable()
+    {
+        breatheAction.started -= OnBreathStarted;
+        breatheAction.performed -= OnBreathStopped;
+        pauseAction.performed -= OnPause;
+        Keyboard.current.onTextInput -= HitNote;
     }
 
     private void HitNote(char keyPressed)  
@@ -173,8 +179,13 @@ public class InputSystem : MonoBehaviour
         }
     }
 
-    public void OnPause(InputAction.CallbackContext context)
+    private void OnPause(InputAction.CallbackContext context)
     {
-        OnGamePaused.Invoke();
+        TogglePause();
+    }
+
+    public void TogglePause()
+    {
+        OnGamePaused?.Invoke();
     }
 }
