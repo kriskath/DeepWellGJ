@@ -1399,7 +1399,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 2931167701182145580, guid: 2ef3217066a9e49369e23099da97d79f, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2931167702035695985, guid: 2ef3217066a9e49369e23099da97d79f, type: 3}
       propertyPath: m_LocalScale.x
@@ -1463,7 +1463,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2931167702707356713, guid: 2ef3217066a9e49369e23099da97d79f, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2931167702707356715, guid: 2ef3217066a9e49369e23099da97d79f, type: 3}
       propertyPath: m_Enabled
