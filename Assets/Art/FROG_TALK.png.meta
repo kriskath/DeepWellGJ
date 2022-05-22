@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 551b1eb0cb4544b26a627e9666c522ee
+guid: 4edba5d492bca47fa839a9cbba71a471
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -116,106 +116,22 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: FROG_NOT_TALK_0
+      name: FROG_TALK_0
       rect:
         serializedVersion: 2
         x: 0
         y: 502
-        width: 272
+        width: 358
         height: 522
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
+      alignment: 9
+      pivot: {x: 0.41206124, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: e158e754dd24a4d0a8d76a40bbd36fd9
-      internalID: 791915434
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: FROG_NOT_TALK_1
-      rect:
-        serializedVersion: 2
-        x: 278
-        y: 502
-        width: 272
-        height: 522
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 252fc2decd3a841039db9c5460d6308b
-      internalID: -1755249521
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: FROG_NOT_TALK_2
-      rect:
-        serializedVersion: 2
-        x: 556
-        y: 502
-        width: 272
-        height: 522
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 20dadd8b7a3dc4256b7a196998df1cda
-      internalID: 1296818154
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: FROG_NOT_TALK_3
-      rect:
-        serializedVersion: 2
-        x: 834
-        y: 502
-        width: 272
-        height: 522
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 7151c67c3670e4d7eab7befdbbb40fb3
-      internalID: 171591285
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: FROG_NOT_TALK_4
-      rect:
-        serializedVersion: 2
-        x: 1112
-        y: 502
-        width: 272
-        height: 522
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 38829011ac1e94849bca457e37c19878
-      internalID: -675215613
+      spriteID: 5ca9e2d4020e840d491b71dd6dca4388
+      internalID: -1910081101
       vertices: []
       indices: 
       edges: []
@@ -231,11 +147,7 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      FROG_NOT_TALK_1: -1755249521
-      FROG_NOT_TALK_3: 171591285
-      FROG_NOT_TALK_2: 1296818154
-      FROG_NOT_TALK_4: -675215613
-      FROG_NOT_TALK_0: 791915434
+      FROG_TALK_0: -1910081101
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0

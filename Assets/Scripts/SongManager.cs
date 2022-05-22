@@ -126,7 +126,7 @@ public class SongManager : MonoBehaviour
     void Start()
     {
         // Find frog mouth animator
-        frogAnimator = GameObject.Find("Frog").transform.GetChild(0).GetComponent<Animator>();
+        frogAnimator = GameObject.Find("Frog").GetComponent<Animator>();
 
         IEnumerator startCoroutine = StartMusicWithDelay(3);
         // Start music
