@@ -78,7 +78,7 @@ public class InputSystem : MonoBehaviour
         // Ignore breath and pause and while counting down
         if (
             breatheAction.phase == InputActionPhase.Started || 
-            pauseAction.triggered ||
+            pauseAction.triggered || SongManager.Instance.IsPaused || 
             !GetComponent<PlayerInput>().actions.enabled) {
             return;
         }
@@ -135,11 +135,15 @@ public class InputSystem : MonoBehaviour
 
     public void OnBreathStarted(InputAction.CallbackContext context)
     {
+        if (SongManager.Instance.IsPaused) { return; }
+
         breathCircle.PlayBreathAnimation(true);
     }
 
     public void OnBreathStopped(InputAction.CallbackContext context) 
     {
+        if (SongManager.Instance.IsPaused) { return; }
+
         // Might want to have a OnSongChanged event so we only need to get secondsperbeat once
         float breatheDurationInBeats = (float) context.duration / SongManager.Instance.SecondsPerBeat;
         Debug.Log("Breathed for " + breatheDurationInBeats + " beats");

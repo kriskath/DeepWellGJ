@@ -37,7 +37,7 @@ public class PlayerController : MonoBehaviour
     private void KeyHit(char key)
     {
         // Ignore non-alphabet characters 
-        if (!Char.IsLetter(key)) { return; }
+        if (!Char.IsLetter(key) || SongManager.Instance.IsPaused) { return; }
 
         // foreach (AnimatorControllerParameter p in animator.parameters)
         //     if (p.type == AnimatorControllerParameterType.Trigger)
@@ -61,11 +61,14 @@ public class PlayerController : MonoBehaviour
 
     public void StartBreatheAnim(InputAction.CallbackContext context)
     {
+        if (SongManager.Instance.IsPaused) { return; }
+
         animator.SetTrigger("BreathStarted");
     }
 
     public void StopBreatheAnim(InputAction.CallbackContext context)
     {
+
         animator.SetTrigger("BreathStopped");
     }
 }

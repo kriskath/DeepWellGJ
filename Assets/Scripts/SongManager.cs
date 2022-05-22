@@ -91,6 +91,9 @@ public class SongManager : MonoBehaviour
     // change speech bubble tail based on who is talking
     private SpriteRenderer speechRenderer;
 
+    private bool isPaused;
+    public bool IsPaused => isPaused;
+
     private void Awake()
     {
         // If there is an instance, and it's not me, delete myself.
@@ -292,6 +295,8 @@ public class SongManager : MonoBehaviour
         {
             audioSource.Pause();
             pauseMenu.SetActive(true);
+            Time.timeScale = 0;
+            isPaused = true;
         }
         else
         {
@@ -299,6 +304,8 @@ public class SongManager : MonoBehaviour
             IEnumerator startCoroutine = StartMusicWithDelay(3);
             // Start music
             StartCoroutine(startCoroutine);
+            Time.timeScale = 1;
+            isPaused = false;
         }
     }
 }
