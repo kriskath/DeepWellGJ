@@ -12,7 +12,7 @@ public class Song : ScriptableObject
     [Tooltip("The song's beats per minute (bpm).")]
     public int bpm = -1;
     [Tooltip("The note's data for a song's game notes.")]
-    public NoteData[] notes; //Song data
+    public NoteData[] notes;
 
 
     [System.Serializable]

@@ -17,6 +17,8 @@ namespace MenuAsset
         [Tooltip("Input the desired tutorial scene index. If left at default value then next build index will be loaded.")]
         [SerializeField] private int tutorialIndex = -1;
 
+        [SerializeField] private GameObject creditsDisplay;
+
         [Tooltip("The first button selected to hover on when navigating to options menu.")]
         [SerializeField] private GameObject optionsFirstButton;
 

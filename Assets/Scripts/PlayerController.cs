@@ -53,11 +53,6 @@ public class PlayerController : MonoBehaviour
         // Ignore non-alphabet characters 
         if (!Char.IsLetter(key) || SongManager.Instance.IsPaused || !isAnimActive) { return; }
 
-        // foreach (AnimatorControllerParameter p in animator.parameters)
-        //     if (p.type == AnimatorControllerParameterType.Trigger)
-        //         animator.ResetTrigger(p.name);
-        // animator.SetTrigger(key.ToString());
-
         // Ignore if currently breathing
         if (animator.GetCurrentAnimatorStateInfo(0).IsName("Player_Breathing")) { return; }
 
